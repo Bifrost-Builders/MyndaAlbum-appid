@@ -1,0 +1,4 @@
+- React
+- Nextjs framework
+- Tailwind fyrir CSS
+- 
