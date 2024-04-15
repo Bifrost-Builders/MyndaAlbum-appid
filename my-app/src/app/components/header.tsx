@@ -3,6 +3,7 @@
 import { useState,useEffect } from "react";
 
 export default function Header() {
+    //Todo: Scroll up fix.
     const [scrollState, setScrollState] = useState<boolean>(false)
     
     useEffect(() => {
