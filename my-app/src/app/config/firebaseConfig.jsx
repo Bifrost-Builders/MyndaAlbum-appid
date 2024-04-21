@@ -3,12 +3,12 @@ import firebase from 'firebase/app';
 import 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyDeOSjDs104thTXhbU5tTCAzDAiyGVVGdk",
+    authDomain: "verkefni-4-og-5-i-vefthroun.firebaseapp.com",
+    projectId: "verkefni-4-og-5-i-vefthroun",
+    storageBucket: "verkefni-4-og-5-i-vefthroun.appspot.com",
+    messagingSenderId: "769414348370",
+    appId: "1:769414348370:web:89ddd7a7f5f3721952698b",
 };
 
 if (!firebase.apps.length) {
