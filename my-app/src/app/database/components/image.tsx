@@ -1,5 +1,6 @@
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import Image from 'next/image';
+import { space } from "postcss/lib/list";
 
 const storage = getStorage();
 
@@ -22,4 +23,7 @@ const name = spaceRef.name;
 
 // Points to 'images'
 const imagesRefAgain = spaceRef.parent;
+
+
+
 

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import "../components/image_ref"
+import "./components/image"
  
 export default function Page() {
   return
