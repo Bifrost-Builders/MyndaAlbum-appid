@@ -73,7 +73,7 @@ export default function Home() {
 
       </section>
 
-      <div className="absolute bottom-5 left-0 bg-black">
+      <div className="absolute bottom-0 left-0 bg-black">
         <h1 className="text-9xl font-bold">Valko</h1>
       </div>
 
