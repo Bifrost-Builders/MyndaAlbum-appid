@@ -1,6 +1,5 @@
 // File: firebaseConfig.js
 import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
 
 const apiKey = process.env.FIREBASE_API_KEY;
 
@@ -13,6 +12,4 @@ const firebaseConfig = {
     storageBucket: "verkefni-4-og-5-i-vefthroun.appspot.com"
 };
 
-const storage = firebase.storage();
-
-export { storage, firebase as default };
+export default initializeApp(firebaseConfig);
