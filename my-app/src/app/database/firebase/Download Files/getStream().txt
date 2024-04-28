@@ -1,0 +1,11 @@
+Download Data Directly from the SDK
+From version 9.5 and higher, the SDK provides these functions for direct download:
+
+getBlob()
+getBytes()
+getStream()
+Using these functions, you can bypass downloading from a URL, and instead return data in your code. This allows for finer-grained access control via Firebase Security Rules.
+
+Note: getStream() is available only for Node.js, and getBlob() is available only for browser-like environments.
+
+docs getStream() : https://firebase.google.com/docs/reference/js/storage?authuser=0#getstream
