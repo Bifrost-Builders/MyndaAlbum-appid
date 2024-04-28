@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/database/firebase/firebaseConfig.js", "src/app/database/components/image.tsx", "src/app/database/firebase/Upload Files/storage_upload_blob.js", "src/app/database/firebase/Create a Reference/create_a_reference.js"],
   "exclude": ["node_modules"]
 }
