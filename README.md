@@ -1,7 +1,7 @@
 ## Notendasögur (Notendasögur):  
 - Sem notandi vil ég geta búið til aðgang þannig að ég geti haft mína eigin myndatímalínu.
 - Sem notandi vil ég setja myndir á tímalínuna mína svo ég geti auðveldlega deilt þeim með öðrum.
-- Sem notandi vil ég geta skoðað og skoðað tímalínur annarra notenda til að sjá myndirnar þeirra.
+- Sem notandi vil ég geta skoðað tímalínur annarra notenda til að sjá myndirnar þeirra.
 - Sem notandi vil ég bæta vinum við appið svo ég geti deilt tímalínunni minni með þeim.
 ## Notendasviðsmyndir (Sviðsmyndir):
 - Tom, sem er tíður ferðamaður, vill deila frímyndum sínum með fjölskyldu sinni og vinum. Hann skráir sig inn í appið, býr til tímalínuna sína og setur inn myndir frá ferð sinni. Hann deilir síðan tímalínunni sinni með fjölskyldumeðlimum sínum og nánum vinum, sem gerir þeim kleift að skoða ferðaminningar hans auðveldlega.  
