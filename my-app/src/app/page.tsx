@@ -4,18 +4,20 @@ import React, { useState } from 'react';
 import Album from './components/ImageUi/album';
 import ImageIntake from './components/ImageUi/imageData';
 import Link from 'next/link';
+import Header from './components/HomeUi/header'
 
 export default function Home() {
   return (
     <>
-      <main className="flex min-h-screen h-[1000px] flex-col items-center justify-between p-24 bg-blue-600">
+      <Header />
+      <main className="flex h-[580px] flex-col items-center justify-between p-24 bg-blue-600">
         <div className='flex flex-col gap-5'>
           <h1 className='text-center text-2xl font-semibold text-white'>Kolbri allow groups to connect <br /> connect your group today</h1>
           <Search />
         </div>
       
       </main>
-      <section className="min-h-screen w-full bg-white flex flex-col justify-center px-10">
+      <section className="min-h-screen w-full bg-white flex flex-col justify-center px-10 mt-10">
 
         <div className='text-center'>
           <h1 className='text-2xl font-semibold'>Let’s look at example of travel from users</h1>

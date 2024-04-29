@@ -7,9 +7,7 @@ export default function ImageIntake() {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    if (file) {
-      setImages([...images, URL.createObjectURL(file)]);
-    }
+    setImages([...images, URL.createObjectURL(file)]);
   };
 
   const getGridClass = () => {
@@ -31,16 +29,16 @@ export default function ImageIntake() {
   return (
     <section className="bg-white max-h-full h-fit w-full rounded-2xl px-3 py-3">
       <section className={clsx("grid gap-4", getGridClass())}>
-        {images.map((src, index) => (
+        {images.map((i, index) => (
           <div className="relative" key={index}>
             <img
-              src={src}
+              src={i}
               alt={`Image nr: ${index + 1}`}
               className="rounded-xl mb-3"
             />
             <button
               className="absolute top-0 h-full w-full bg-black bg-opacity-90 text-white rounded-xl p-2 opacity-0 hover:opacity-100 transition-opacity font-bold"
-              onClick={() => removeImage(index)}
+            
             >
                 <h1>Remove image</h1>
             </button>
@@ -52,7 +50,7 @@ export default function ImageIntake() {
         type="file"
         accept="image/*"
         className="h-24 w-full text-blue-500 file:bg-blue-600 file:outline-none file:border-none file:text-white file:rounded-[5px] file:text-sm file:px-3 file:py-2 mt-5 text-transparent"
-        onChange={handleFileChange}
+        onChange={(event) => handleFileChange(event)}
       />
     </section>
   );
