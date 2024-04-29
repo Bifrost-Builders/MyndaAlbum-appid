@@ -13,6 +13,9 @@ const config: Config = {
         'Blue': '034078',
         'DarkBlue': '0A1128',
       },
+      gridTemplateColumns: {
+        'fluid': 'repeat(auto-fit, minmax(20rem, 1fr))',
+      }
     },
   },
   plugins: [],

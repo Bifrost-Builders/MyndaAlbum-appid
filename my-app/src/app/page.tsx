@@ -2,6 +2,7 @@
 import Search from './components/HomeUi/Search';
 import React, { useState } from 'react';
 import Album from './components/ImageUi/album';
+import ImageIntake from './components/ImageUi/imageData';
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <Search />
       </div>
 
-      <Album></Album>
+      <ImageIntake></ImageIntake>
      
     
     </main>
