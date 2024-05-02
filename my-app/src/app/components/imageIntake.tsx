@@ -1,16 +1,40 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Input from "./imageButton";
 import ImageBlock from "./imageBlock";
 
+import {imageUploader} from '../lib/scripts'
+
 export default function ImageIntake() {
   const [images, setImages] = useState([]);
+  const [apiResponse, setApiResponse] = useState<any>(null); // To store the API response
+  const [error, setError] = useState<string | null>(null); // To store errors
 
-  const handleFileChange = (event) => {
+
+  const handleFileChange = async (event) => {
     const file = event.target.files[0];
-    setImages([...images, URL.createObjectURL(file)]);
+    if (file) {
+        const fileUrl = URL.createObjectURL(file);
+        setImages((prev) => [...prev, fileUrl]);
+    }
+
+    try {
+      // Call the imageUploader and await its result
+      const response = await imageUploader(file);
+      
+      // Store the API response
+      setApiResponse(response.province);
+
+      console.log("API Response:", response    ); // Log the response for debugging
+    } catch (err) {
+      // Handle errors
+      console.error("Error uploading image:", err);
+      setError(err.message || "Failed to upload image"); // Set the error message
+    }
+    
   };
+  
 
   const getGridClass = () => {
     const imageCount = images.length;
