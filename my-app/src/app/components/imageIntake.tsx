@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import clsx from "clsx";
 import Input from "./imageButton";
+import ImageBlock from "./imageBlock";
 
 export default function ImageIntake() {
   const [images, setImages] = useState([]);
@@ -33,15 +33,9 @@ export default function ImageIntake() {
       <section className={clsx("grid gap-4", getGridClass())}>
         {images.map((i, index) => (
           <div className="relative" key={index}>
-            <Image
-              height={300}
-              width={300}
-              src={i}
-              alt={`Image nr: ${index + 1}`}
-              className="rounded-xl mb-3"
-            />
+            <ImageBlock src={i} />
             <button
-              className="absolute top-0 h-full w-[300px] bg-black bg-opacity-95 text-white rounded-xl p-2 opacity-0 hover:opacity-100 transition-opacity font-bold"
+              className="absolute top-0 h-full w-full bg-black bg-opacity-95 text-white rounded-[5px] p-2 opacity-0 hover:opacity-100 transition-opacity font-bold"
               onClick={() => removeImage(index)}
             >
                 <h1>Remove image</h1>

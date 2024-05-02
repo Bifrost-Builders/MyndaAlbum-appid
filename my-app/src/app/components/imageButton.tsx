@@ -6,6 +6,7 @@
 
 import React from 'react';
 import Button from './baseComp/button';
+import handleClickByRef from '../lib/scripts';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
@@ -14,12 +15,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const Input: React.FC<InputProps> = ({ placeholder = 'Upload file', ...props }) => {
   const fileInputRef = React.useRef<HTMLInputElement | null>(null);
-
-  const handleClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
-    }
-  };
 
   return (
     <div>
@@ -31,7 +26,7 @@ const Input: React.FC<InputProps> = ({ placeholder = 'Upload file', ...props }) 
       />
       <Button
         
-        onClick={handleClick}
+        onClick={() => handleClickByRef(fileInputRef)}
         title={placeholder}
       >
         {placeholder}

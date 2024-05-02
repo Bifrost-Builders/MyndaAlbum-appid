@@ -1,4 +1,4 @@
-
+"use client";
 /*
     This file exports button that can be used to route
 
@@ -9,15 +9,22 @@
 
 import React from "react";
 import Button from "./baseComp/button";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { useRef } from "react";
+import handleClickByRef from "../lib/scripts";
 
-export default function RoutingButton({route = "/"}) {
-    const Router = useRouter();
-    const handleRouting = () => {
-        Router.push(route)
-    };
+type tpr = {
+    route?: string,
+    title?: string,
+}
+
+export default function RoutingButton({ route = "/", title }: tpr) {
+    const linkRef = React.useRef(null);
 
     return (
-        <Button onClick={handleRouting}/>
+        <>
+        <Link href={route} style={{ display: 'none' }} ref={linkRef} />
+            <Button onClick={() => handleClickByRef(linkRef)} title={ title } />
+        </>
     )
 }
