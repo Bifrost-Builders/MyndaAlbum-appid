@@ -6,7 +6,7 @@ export default function handleClickByRef(refVARIABLE) {
 
 export const imageUploader = (image: File): Promise<any> => {
     return new Promise((resolve, reject) => {
-      const apiToken = "PNYRX9HF96BQJTQSWQ5G"; // API key
+      const apiToken = process.env.API_TOKEN; // API key
   
       if (image) {
         const reader = new FileReader();
