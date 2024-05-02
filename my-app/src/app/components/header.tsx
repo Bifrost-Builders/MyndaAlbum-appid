@@ -12,33 +12,30 @@ export default function Header() {
     }
 
     return (
-        <header className="bg-black text-white h-16 flex justify-between items-center px-10">
+        <header className="bg-black h-12 w-full top-0 z-50 flex justify-center items-center gap-48 text-white relative">
 
-            <h1 className="text-3xl font-semibold">Name</h1>
+            <div className={menuState ? "bg-black bg-opacity-70 absolute left-14 top-14 h-32 w-32 flex flex-col justify-center px-9 rounded-2xl" : "hidden"}>
+                <Link href="" className="font-semibold hover:text-slate-200">About</Link>
+                <Link href="" className="font-semibold hover:text-slate-200">FAQ</Link>
+                <Link href="" className="font-semibold hover:text-slate-200">Demo</Link>
+            </div>
 
-            <div
-                className="h-7 w-10 gap-2 relative"
-                onClick={() => onMenuClick()}
-            >
+            <div className="absolute h-10 w-10 left-20 flex justify-center flex-col gap-1.5"
+            onClick={() => onMenuClick()}>
 
-                <div className="bg-white h-1 w-full absolute right-0 top-0"></div>
-                
-                <div className="bg-white h-1 w-8 absolute right-0 top-3"></div>
-
-                <div className="bg-white h-1 w-6 absolute right-0 top-6"></div>
+                    <div className="h-1 w-full bg-slate-700"></div>
+                    <div className="h-1 w-8 bg-slate-600"></div>
+                    <div className="h-1 w-5 bg-slate-300"></div>
 
             </div>
 
-            <section className={menuState ? "bg-black text-white h-32 w-32 flex flex-col justify-center items-center text-lg font-semibold rounded-[8px] gap-2 transition-all delay-75 absolute top-[70px] right-3" : "hidden"}>
+            <h1 className="text-2xl font-serif font-bold">Kolbri</h1>
 
-                <Link href={"/"} className="hover:text-gray-200 active:text-gray-300">Home</Link>
-                
-                <Link href={"/"} className="hover:text-gray-200 active:text-gray-300">About</Link>
-    
-                <Link href={"/"} className="hover:text-gray-200 active:text-gray-300">Help</Link>
-    
+            <div className="absolute right-20">
+            <input type="text" className="h-9 w-52 bg-black border-2 border-slate-900 rounded-full px-4 font-semibold" placeholder="Search for group" />
+            </div>
 
-            </section>
+
 
         </header>
     )
