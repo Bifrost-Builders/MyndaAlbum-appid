@@ -1,10 +1,7 @@
 
-type api_Key = {
 
-}
-
-/* Get image loc */
-export default function getImageLoc() {
-    
-    return []
-}
+export default function handleClickByRef(refVARIABLE) {
+    if (refVARIABLE.current) {
+        refVARIABLE.current.click();
+    }
+};
