@@ -2,11 +2,12 @@
 import React from 'react';
 import Button from './components/baseComp/button';
 import RoutingButton from './components/routingButton';
+import Header from './components/header';
 
 export default function Home() {  
   return (
     <main className="min-h-screen h-full w-full bg-black relative">
-
+      <Header />
       {/* Gradient backgrounds with animations */}
       <div
         className="bg-gradient-to-br from-violet-900 via-sky-700 to-red-500 h-32 w-36 absolute top-0 right-1 blur-3xl"
@@ -52,7 +53,7 @@ export default function Home() {
         </ul>
 
         {/* Call to action button */}
-        <RoutingButton />
+        <RoutingButton route='/secure'/>
 
       </section>
 
