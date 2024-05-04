@@ -5,6 +5,8 @@ import { FaBars, FaUserFriends, FaImage, FaChartLine, FaCog, FaSignOutAlt, FaPlu
 import Link from 'next/link';
 import Button from '@/app/components/baseComp/button';
 
+//Ekki ready
+
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
