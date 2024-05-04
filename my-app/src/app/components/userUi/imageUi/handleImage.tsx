@@ -3,11 +3,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as LR from '@uploadcare/blocks';
 import { PACKAGE_VERSION } from '@uploadcare/blocks';
 import ShowImages from './showImages';
-import { imageUploader } from '@/app/lib/scripts';
-import Button from '../../baseComp/button';
+import { imageFinder } from '@/app/lib/scripts';
+
 
 LR.registerBlocks(LR);
 
+//api res
+//Country -> ai_country
+//City -> city
+//province -> province
 
 //Data struct for images that are uploaded
 
@@ -15,7 +19,7 @@ type ImageTransferType = {
   uuid: string,
   fileName: string,
   imageUrl: string,
-  info: [],
+  info: {},
 };
 
 function App() {
@@ -29,15 +33,15 @@ function App() {
 
     const handleChangeEvent = (event) => {
       const successfulFiles = event.detail.allEntries.filter(
-        (file) => file.status === 'success'
+        (file) => file.status === 'success',
         );
 
       // Map the successful files to your ImageTransferType
       const formattedFiles = successfulFiles.map((file) => ({
         uuid: file.uuid,
         fileName: file.fileInfo.originalFilename,
-          imageUrl: baseUrl + file.uuid + "/",
-        info: null,
+        imageUrl: baseUrl + file.uuid + "/",
+        info: imageFinder((baseUrl + file.uuid + "/")), //Skilar of seint
       }));
 
       setFiles([...formattedFiles]);
