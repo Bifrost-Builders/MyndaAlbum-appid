@@ -1,4 +1,4 @@
-import LeftSideNav from "./usercomponents/leftSideNav"
+import LeftSideNav from "../components/userUi/leftSideNav"
 
 export default function UserPage() {
     return (
