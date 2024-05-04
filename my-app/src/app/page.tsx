@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import RoutingButton from './components/routingButton';
-import Header from './components/header';
+import Header from './components/header/header';
 
 export default function Home() {  
   return (

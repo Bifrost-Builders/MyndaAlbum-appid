@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import MobileHeader from "./header/mobileHeader";
-import PcHeader from "./header/pcNavbar/pcnavbar";
+import MobileHeader from "./navSmall/mobileHeader";
+import PcHeader from "./navBig/pcnavbar";
 
 export default function Header() {
   const [isPhone, setIsPhone] = useState(false);

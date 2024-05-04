@@ -1,13 +1,14 @@
-"use client";
-import ImageUploader from "../components/filetest";
-import Header from "../components/header";
-import ImageIntake from "../components/imageIntake";
-import RoutingButton from "../components/routingButton";
+import LeftSideNav from "./usercomponents/leftSideNav"
 
 export default function UserPage() {
     return (
-        <main className="min-h-screen bg-black h-full">
-            <Header />
+        <main className="min-h-screen h-full grid grid-cols-[4.5rem_1fr]">
+            <LeftSideNav />
+            
+            <section className="h-screen w-full bg-slate-100">
+
+            </section>
+
         </main>
     )
 }
