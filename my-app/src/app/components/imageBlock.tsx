@@ -1,34 +1,38 @@
-/* 
-
-    Exports block with country,city,image,province
-
-    *default value !(src)! . Not found
-
-*/
-
+import React from 'react';
 
 type Details = {
-    country?: string;
-    city?: string;
-    province?: string;
-  };
-  
+  country?: string;
+  city?: string;
+  province?: string;
+};
+
 type ImageBlockProps = {
-    src: string;
-    info?: Details;
-  };
+  src: string;
+  info?: Details;
+};
 
 export default function ImageBlock({ src, info = {} }: ImageBlockProps) {
-    const { country = "Not found", city = "Not found", province = "Not found" } = info;
-    
-    return (
-      <div
-                className="h-[200px] w-full m-auto bg-center bg-no-repeat bg-cover col-span-3 rounded-[5px] relative text-white max-sm:row-span-2 max-sm:col-span-1 image-wrapper"
-                style={{ backgroundImage: `url(${src})` }}>
-                <h1 className="absolute top-1 left-2 font-semibold">{ country }</h1>
-                <h1 className="absolute bottom-6 text-2xl left-2 font-bold">{ city}</h1>
-                <p className="text-sm absolute bottom-2 left-2 font-semibold">{ province }</p>
-            </div>
-    )
+  const { country = "Not found", city = "Not found", province = "Not found" } = info;
 
+  return (
+    <div
+      className="relative min-h-[200px] w-full h-full rounded-[12px] overflow-hidden text-white"
+      style={{
+        backgroundImage: `url(${src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="absolute inset-0 bg-black/40" /> 
+
+      <div className="absolute top-0 left-0 p-2"> 
+        <h1 className="font-semibold">{country}</h1>
+      </div>
+
+      <div className="absolute bottom-0 left-0 p-2"> 
+        <h1 className="text-2xl font-bold">{city}</h1>
+        <p className="text-sm font-semibold">{province}</p>
+      </div>
+    </div>
+  );
 }

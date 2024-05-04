@@ -5,7 +5,6 @@
 
 */
 
-
 //Items will be displayed in navbar
 export const LinkNames = ["Home", "Demo", "QA", "About", "Find your group", "Sign in"];
 

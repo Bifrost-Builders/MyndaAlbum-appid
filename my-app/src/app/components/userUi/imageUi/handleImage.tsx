@@ -4,11 +4,13 @@ import * as LR from '@uploadcare/blocks';
 import { PACKAGE_VERSION } from '@uploadcare/blocks';
 import ShowImages from './showImages';
 import { imageUploader } from '@/app/lib/scripts';
+import Button from '../../baseComp/button';
 
 LR.registerBlocks(LR);
 
 
 //Data struct for images that are uploaded
+
 type ImageTransferType = {
   uuid: string,
   fileName: string,
@@ -50,26 +52,36 @@ function App() {
     };
   }, [setFiles]);
 
-  return (
-    <div>
-      <lr-config
-        ctx-name="my-uploader"
-        pubkey="ece62160ae63703904a5"
-      />
+    return (
+        <section className='relative min-h-screen h-full w-full'>
+            <section className='bg-slate-100 h-32 rounded-[12px] shadow-sm p-5 border-2 border-slate-300 border-opacity-20'>
+                <h1 className="font-semibold text-lg mb-5 text-center">Click the button to add image</h1>
+                <div className='flex justify-center'>
+                        <lr-config
+                        ctx-name="my-uploader"
+                        pubkey="ece62160ae63703904a5"
+                    />
 
-      <lr-file-uploader-regular
-        ctx-name="my-uploader"
-        css-src={`https://cdn.jsdelivr.net/npm/@uploadcare/blocks@${PACKAGE_VERSION}/web/lr-file-uploader-regular.min.css`}
-      />
+                    <lr-file-uploader-regular
+                        ctx-name="my-uploader"
+                        css-src={`https://cdn.jsdelivr.net/npm/@uploadcare/blocks@${PACKAGE_VERSION}/web/lr-file-uploader-regular.min.css`}
+                        class='my-config'
+                    />
 
-      <lr-upload-ctx-provider
-        ctx-name="my-uploader"
-        ref={ctxProviderRef}
-      />
+                    <lr-upload-ctx-provider
+                        ctx-name="my-uploader"
+                        ref={ctxProviderRef}
+                    />
+                </div>
+            </section>
+            <div className="h-full w-full my-3">
+                <h1 className="font-semibold text-lg my-1">Your selected images</h1>
 
-          <ShowImages filesIds={files} />
+                {files.length === 0 ? <h1 className="font-semibold text-sm">Currently no images has been selected</h1> : <ShowImages files={files} />}
 
-    </div>
+            </div>
+
+    </section>
   );
 }
 
