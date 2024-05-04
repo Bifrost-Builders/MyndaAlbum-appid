@@ -1,5 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, FC } from "react";
+import ImageBlock from "@/app/components/imageBlock";
+import { getLocationImage } from "@/app/lib/scripts";
 import * as LR from "@uploadcare/blocks";
 
 LR.registerBlocks(LR);
@@ -23,10 +25,12 @@ const ImageHandler: FC = () => {
     const handleChangeEvent = (e: CustomEvent<LR.EventMap["change"]>) => {
         console.log("Change event payload:", e);
         //Villan herna skiptir engu bara typescript a tja sig
-      const successfulFiles = e.detail.allEntries.filter(
-        (f) => f.status === "success"
-      );
-      setFiles(successfulFiles as FileInfo[]);
+        const successfulFiles = e.detail.allEntries.filter(
+            (f) => f.status === "success",
+        );
+        console.log(e.detail);
+        setFiles(successfulFiles as FileInfo[]);
+        getLocationImage(files)
     };
 
     ctxProvider.addEventListener("change", handleChangeEvent);

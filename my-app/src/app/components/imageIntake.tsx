@@ -16,6 +16,7 @@ export default function ImageIntake() {
     if (file) {
       const fileUrl = URL.createObjectURL(file);
       setImages((prev) => [...prev, fileUrl]);
+      
 
       try {
         const response = await imageUploader(file);

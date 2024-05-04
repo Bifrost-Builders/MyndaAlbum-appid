@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function handleClickByRef(refVARIABLE) {
     if (refVARIABLE.current) {
@@ -66,4 +66,22 @@ export const useDimensions = ref => {
 
   return dimensions.current;
 };
-  
+
+//Call this func to get image location
+
+export async function getLocationImage(file) {
+  if (file) {
+      try {
+        const response = await imageUploader(file);
+
+        if (response) {
+          console.log("API Response:", response);
+          return ((prev) => [...prev, response]);
+        } else {
+          throw new Error("Response is undefined");
+        }
+      } catch (err: any) {
+        console.error("Error uploading image:", err);
+      }
+    }
+};
