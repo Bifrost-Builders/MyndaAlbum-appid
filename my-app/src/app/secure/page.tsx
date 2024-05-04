@@ -5,6 +5,8 @@ import Header from "../components/header";
 import ImageIntake from "../components/imageIntake";
 import RoutingButton from "../components/routingButton";
 
+//<ImageIntake /> VIRKAR
+
 export default function UserPage() {
     return (
         <main className="min-h-screen bg-black h-full">
