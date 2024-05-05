@@ -1,4 +1,4 @@
-import { MobileSideBar } from './mobileNavbar/sideBar';
+import { MobileSideBar } from './sideBar';
 import clsx from 'clsx';
 
 export default function MobileHeader({ isSticky }) {
