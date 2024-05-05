@@ -5,44 +5,45 @@ export default function handleClickByRef(refVARIABLE) {
         refVARIABLE.current.click();
     }
 };
-
-export const imageFinder = (FULLUrl) => {
+export const imageFinder = async (FULLUrl) => {
   const url = "https://picarta.ai/classify";
-    const apiToken = "PNYRX9HF96BQJTQSWQ5G"; // Replace with your API token
-    const headers = {"Content-Type": "application/json"};
+  const apiToken = process.env.Location_APP_API_TOKEN; // Replace with your API token
+  const headers = { "Content-Type": "application/json" };
 
-    // OR from a URL
-    const imgPath = FULLUrl;
+  const payload = {
+    TOKEN: apiToken,
+    IMAGE: FULLUrl,
+  };
 
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(payload),
+    });
 
-    // Prepare the payload
-    const payload = {
-        "TOKEN": apiToken,
-        "IMAGE": imgPath
+    if (response.ok) {
+      const result = await response.json();
+      // Return all relevant information
+      return {
+        country: result.ai_country || 'Unknown Country',
+        city: result.city || 'Unknown City',
+        province: result.province || 'Unknown Province',
+      };
+    } else {
+      throw new Error("Request failed with status code: " + response.status);
+    }
+  } catch (error) {
+    console.error("Error during fetch:", error);
+    return {
+      country: 'Unknown Country',
+      city: 'Unknown City',
+      province: 'Unknown Province',
     };
+  }
+};
 
-    // Send the POST request with the payload as JSON data
-    fetch(url, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(payload)
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error("Request failed with status code: " + response.status);
-        }
-    })
-    .then(result => {
-        console.log(result);
-    })
-    .catch(error => {
-        console.error("Request failed with error:", error);
-    });                                
-                      
 
-}
 
 export const imageUploader = (image: File): Promise<any> => {
   return new Promise((resolve, reject) => {

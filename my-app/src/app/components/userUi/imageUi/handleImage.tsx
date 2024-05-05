@@ -19,7 +19,7 @@ type ImageTransferType = {
   uuid: string,
   fileName: string,
   imageUrl: string,
-  info: {},
+  info: any,
 };
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
     if (!ctxProvider) return;
 
     const handleChangeEvent = (event) => {
+      let dtInfo = null;
       const successfulFiles = event.detail.allEntries.filter(
         (file) => file.status === 'success',
         );
@@ -41,7 +42,7 @@ function App() {
         uuid: file.uuid,
         fileName: file.fileInfo.originalFilename,
         imageUrl: baseUrl + file.uuid + "/",
-        info: imageFinder((baseUrl + file.uuid + "/")), //Skilar of seint
+        info: null,
       }));
 
       setFiles([...formattedFiles]);
