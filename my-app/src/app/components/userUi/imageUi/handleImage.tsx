@@ -4,6 +4,7 @@ import * as LR from '@uploadcare/blocks';
 import { PACKAGE_VERSION } from '@uploadcare/blocks';
 import ShowImages from './showImages';
 import { imageFinder } from '@/app/lib/scripts';
+import NoImage from './noImage';
 
 
 LR.registerBlocks(LR);
@@ -82,7 +83,10 @@ function App() {
             <div className="h-full w-full my-3">
                 <h1 className="font-semibold text-lg my-1">Your selected images</h1>
 
-                {files.length === 0 ? <h1 className="font-semibold text-sm">Currently no images has been selected</h1> : <ShowImages files={files} />}
+          {files.length === 0 ?
+              <NoImage />
+            
+            : <ShowImages files={files} />}
 
             </div>
 

@@ -15,3 +15,23 @@ export const LinkRoutes = ["", "Demo", "Qa", "About", "findyourgroup", "Auth"]
 //User section
 
 //User navbar routes
+
+
+export const sideBarLinks = [
+    {
+        imgPath: "/undraw_sweet_home_dkhr.png",
+        route: "/secure",
+        label: "Home",
+    },
+    {
+        imgPath: "/undraw_Edit_photo_re_ton4.png",
+        route: "/",
+        label: "Add image",
+    },
+    {
+        imgPath: "/undraw_add_friends_re_3xte.png",
+        route: "/",
+        label: "Add freinds",
+    },
+
+]
