@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as LR from '@uploadcare/blocks';
 import { PACKAGE_VERSION } from '@uploadcare/blocks';
 import ShowImages from './showImages';
-import { imageFinder } from '@/app/lib/scripts';
 import NoImage from './noImage';
 
 

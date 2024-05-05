@@ -7,7 +7,7 @@ export default function handleClickByRef(refVARIABLE) {
 };
 export const imageFinder = async (FULLUrl) => {
   const url = "https://picarta.ai/classify";
-  const apiToken = process.env.Location_APP_API_TOKEN; // Replace with your API token
+  const apiToken = process.env.Location_APP_API_TOKEN; 
   const headers = { "Content-Type": "application/json" };
 
   const payload = {
