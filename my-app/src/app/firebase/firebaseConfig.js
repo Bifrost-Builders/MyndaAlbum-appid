@@ -21,4 +21,5 @@ const storage = getStorage(firebaseApp);
 const database = getDatabase(firebaseApp);
 
 export { storage };
+
 export { database };
