@@ -16,6 +16,7 @@ export const LinkRoutes = ["", "Demo", "Qa", "About", "findyourgroup", "Auth"]
     Array thats stores data that is supposed to be displayed in user left side navbar
     Dynamic
 */
+//ekki tengt
 export const sideBarLinks = [
     {
         imgPath: "/undraw_sweet_home_dkhr.png",
@@ -29,7 +30,7 @@ export const sideBarLinks = [
     },
     {
         imgPath: "/undraw_add_friends_re_3xte.png",
-        route: "/",
+        route: "/ev1",
         label: "Add freinds",
     },
 ]

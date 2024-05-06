@@ -26,7 +26,7 @@ const sideBarLinks = [
     },
     {
         imgPath: undraw_add_friends_re_3xte,
-        route: '/',
+        route: '/ev1',
         label: 'Add Friends',
     },
     {

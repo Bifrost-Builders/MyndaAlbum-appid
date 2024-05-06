@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { imageFinder } from '../lib/scripts';
+import fileInformation from '../lib/scripts'
 
 
 type SetEditStruct = {
@@ -20,6 +21,7 @@ export default function ImageBlock({ src, info = {} }) {
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [province, setProvince] = useState('');
+  const [rs, setRs] = useState(null);
 
   const [editMode, setEditMode] = useState<SetEditStruct>({}); 
   const [tempText, setTempText] = useState<EditStruct>({}); 
@@ -63,7 +65,8 @@ export default function ImageBlock({ src, info = {} }) {
       handleBlur(field); 
     }
   };
-  console.log("Country ss:",country)
+  console.log("Country ss:", country)
+  console.log("rs:", rs)
   return (
     <div
       className="relative min-h-[200px] w-full h-full rounded-[12px] overflow-hidden text-white"
