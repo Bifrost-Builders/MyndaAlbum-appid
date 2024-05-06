@@ -1,3 +1,4 @@
+MyndaAlbum-app
 ## Notendasviðsmyndir (Sviðsmyndir):
 - Tom, sem er tíður ferðamaður, vill deila frímyndum sínum með fjölskyldu sinni og vinum. Hann skráir sig inn í appið, býr til tímalínuna sína og setur inn myndir frá ferð sinni og skrifar texta sem fylgir myndinni á tímalínuna. Hann deilir síðan tímalínunni sinni með fjölskyldumeðlimum sínum og nánum vinum, sem gerir þeim kleift að skoða ferðaminningar hans auðveldlega.  
 - Sarah er að skipuleggja ættarmót og vill safna gömlum myndum til að búa til nostalgíska tímalínu. Hún skráir sig í appið, setur inn myndir frá fyrri fjölskyldusamkomum og býður ættingjum sínum að taka þátt í appinu og skoða tímalínuna. Þetta hjálpar henni að rifja upp liðna atburði og styrkir fjölskylduböndin.  
