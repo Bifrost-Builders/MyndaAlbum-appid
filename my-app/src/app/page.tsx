@@ -1,3 +1,5 @@
+'use client'
+import Camera from "./camera";
 import ImageUpload from "./imageUpload";
 
 export default function Home() {
@@ -6,6 +8,7 @@ export default function Home() {
       
       <h1>Hello world. test run</h1>
       <ImageUpload/>
+      <Camera/>
       
     </main>
   );
