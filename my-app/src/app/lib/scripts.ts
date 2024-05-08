@@ -1,6 +1,29 @@
 import { useEffect, useRef } from "react";
 import { info } from '@uploadcare/upload-client'
+import { getDatabase,ref, child, get } from "firebase/database";
+import { initializeApp } from 'firebase/app';
+import {firebaseConfig} from "@/app/firebase/firebaseConfig"
 
+const firebaseApp = initializeApp(firebaseConfig);
+
+export function readFromFirebase() {
+  const database = ref(getDatabase());
+  get(child(database, '/User')).then((data) => {
+    if (data.exists()){
+      console.log(data.val())
+    } else {
+      console.log("No data found")
+    };
+  }).catch((e) => {
+    console.log("Error", e)
+  })
+}
+
+export function WriteToWrite() {
+  
+}
+
+//Virkar ekki!
 export async function fileInformation(uuid) {
   const result = await info(
     uuid,
