@@ -6,7 +6,7 @@ import Image from "next/image"
 import ShowImages from '@/app/components/userUi/imageUi/showImages'
 import { useEffect, useState } from 'react';
 import Blabla from '@/app/components/userUi/imageUi/homePage'
-
+//Use client!
 export default function homePage() {
     const [files, setFiles] = useState([]);
 
