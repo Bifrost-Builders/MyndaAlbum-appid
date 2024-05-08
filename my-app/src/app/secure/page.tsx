@@ -11,7 +11,6 @@ export default function homePage() {
     const [files, setFiles] = useState([]);
 
     // Fetch or define the files array here...
-
     return (
         <section className="min-h-screen flex h-full bg-white">
             <LeftSideNav />

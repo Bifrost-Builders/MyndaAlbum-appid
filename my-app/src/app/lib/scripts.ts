@@ -1,4 +1,15 @@
 import { useEffect, useRef } from "react";
+import { info } from '@uploadcare/upload-client'
+
+export async function fileInformation(uuid) {
+  const result = await info(
+    uuid,
+    {
+      publicKey: 'ece62160ae63703904a5'
+    }
+  )
+  return result;
+}
 
 export default function handleClickByRef(refVARIABLE) {
     if (refVARIABLE.current) {
@@ -7,7 +18,7 @@ export default function handleClickByRef(refVARIABLE) {
 };
 export const imageFinder = async (FULLUrl) => {
   const url = "https://picarta.ai/classify";
-  const apiToken = process.env.Location_APP_API_TOKEN; // Replace with your API token
+  const apiToken = process.env.Location_APP_API_TOKEN; 
   const headers = { "Content-Type": "application/json" };
 
   const payload = {
@@ -24,6 +35,7 @@ export const imageFinder = async (FULLUrl) => {
 
     if (response.ok) {
       const result = await response.json();
+      console.log("res: ",result)
       // Return all relevant information
       return {
         country: result.ai_country || 'Unknown Country',

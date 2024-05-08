@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as LR from '@uploadcare/blocks';
 import { PACKAGE_VERSION } from '@uploadcare/blocks';
 import ShowImages from './showImages';
-import { imageFinder } from '@/app/lib/scripts';
 import NoImage from './noImage';
 
 
@@ -16,7 +15,7 @@ LR.registerBlocks(LR);
 
 //Data struct for images that are uploaded
 
-type ImageTransferType = {
+export type ImageTransferType = {
   uuid: string,
   fileName: string,
   imageUrl: string,
@@ -25,7 +24,7 @@ type ImageTransferType = {
 
 function App() {
   const baseUrl = "https://ucarecdn.com/";
-    const [files, setFiles] = useState<ImageTransferType[]>([]);
+    const [files, setFiles] = useState([]);
     const ctxProviderRef = useRef(null);
 
   useEffect(() => {
