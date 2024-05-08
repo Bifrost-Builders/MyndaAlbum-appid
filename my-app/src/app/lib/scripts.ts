@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-
 import { info } from '@uploadcare/upload-client'
 
 export async function fileInformation(uuid) {
