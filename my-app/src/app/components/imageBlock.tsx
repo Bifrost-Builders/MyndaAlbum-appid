@@ -4,13 +4,14 @@ import { imageFinder } from '../lib/scripts';
 import { ImageTransferType } from './userUi/imageUi/handleImage';
 import fileInformation from '../lib/scripts'
 
-
 type SetEditStruct = {
   country?: boolean;
   city?: boolean;
   province?: boolean;
 };
 
+
+//Sama struct og info.
 type EditStruct = {
   country?: string;
   city?: string;
@@ -25,7 +26,6 @@ export default function ImageBlock({ src, info = {} }) {
   const [tempText, setTempText] = useState<EditStruct>({}); 
   //Geymir data sem fer a firebase
   const [dataToSend, SetDataToSend] = useState<ImageTransferType[]>([])
-  
   /*
   useEffect(() => {
     const fetchLocationData = async () => {
@@ -38,8 +38,7 @@ export default function ImageBlock({ src, info = {} }) {
       }
     };
     fetchLocationData();
-  }, [src]);
- */ //uncomment þegar í final stage
+  }, [src]); */
 
   const handleEdit = (field) => {
     setEditMode({ [field]: true });
