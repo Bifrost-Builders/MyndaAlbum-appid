@@ -26,8 +26,8 @@ export default function ImageBlock({ src, info = {} }) {
   const [tempText, setTempText] = useState<EditStruct>({}); 
   //Geymir data sem fer a firebase
   const [dataToSend, SetDataToSend] = useState<ImageTransferType[]>([])
-  
-  /* useEffect(() => {
+  /*
+  useEffect(() => {
     const fetchLocationData = async () => {
       const result = await imageFinder(src.imageUrl);
       if (result) {
