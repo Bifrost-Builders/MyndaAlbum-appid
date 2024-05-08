@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { imageFinder } from '../lib/scripts';
+import { ImageTransferType } from './userUi/imageUi/handleImage';
+import fileInformation from '../lib/scripts'
 
 
 type SetEditStruct = {
@@ -15,25 +17,25 @@ type EditStruct = {
   province?: string;
 };
 
-
 export default function ImageBlock({ src, info = {} }) {
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [province, setProvince] = useState('');
-
   const [editMode, setEditMode] = useState<SetEditStruct>({}); 
   const [tempText, setTempText] = useState<EditStruct>({}); 
-
+  //Geymir data sem fer a firebase
+  const [dataToSend, SetDataToSend] = useState<ImageTransferType[]>([])
+  
   useEffect(() => {
     const fetchLocationData = async () => {
-      const result = await imageFinder(src);
+      const result = await imageFinder(src.imageUrl);
       if (result) {
         setCountry(result.country);
         setCity(result.city);
         setProvince(result.province);
+        src.info = result;
       }
     };
-
     fetchLocationData();
   }, [src]);
 
@@ -63,12 +65,12 @@ export default function ImageBlock({ src, info = {} }) {
       handleBlur(field); 
     }
   };
-  console.log("Country ss:",country)
+
   return (
     <div
       className="relative min-h-[200px] w-full h-full rounded-[12px] overflow-hidden text-white"
       style={{
-        backgroundImage: `url(${src})`,
+        backgroundImage: `url(${src.imageUrl})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

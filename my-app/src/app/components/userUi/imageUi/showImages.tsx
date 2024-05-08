@@ -53,7 +53,7 @@ export default function ShowImages({ files }) {
                 "bg-gray-200" 
               )}
             >
-              <ImageBlock src={file.imageUrl} />
+              <ImageBlock src={file} />
             </motion.div>
           );
         })}

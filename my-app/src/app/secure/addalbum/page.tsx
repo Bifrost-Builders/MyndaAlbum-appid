@@ -1,6 +1,6 @@
 import LeftSideNav from '../../components/userUi/leftSideNav'
 import HandleImage from "@/app/components/userUi/imageUi/handleImage"
-import Image from "next/image"
+
 export default function addAlbumPage() {
     return (
         <section className="min-h-screen flex h-full bg-white">
