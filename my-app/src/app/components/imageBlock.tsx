@@ -4,13 +4,14 @@ import { imageFinder } from '../lib/scripts';
 import { ImageTransferType } from './userUi/imageUi/handleImage';
 import fileInformation from '../lib/scripts'
 
-
 type SetEditStruct = {
   country?: boolean;
   city?: boolean;
   province?: boolean;
 };
 
+
+//Sama struct og info.
 type EditStruct = {
   country?: string;
   city?: string;
@@ -26,7 +27,7 @@ export default function ImageBlock({ src, info = {} }) {
   //Geymir data sem fer a firebase
   const [dataToSend, SetDataToSend] = useState<ImageTransferType[]>([])
   
-  useEffect(() => {
+  /* useEffect(() => {
     const fetchLocationData = async () => {
       const result = await imageFinder(src.imageUrl);
       if (result) {
@@ -37,7 +38,7 @@ export default function ImageBlock({ src, info = {} }) {
       }
     };
     fetchLocationData();
-  }, [src]);
+  }, [src]); */
 
   const handleEdit = (field) => {
     setEditMode({ [field]: true });
