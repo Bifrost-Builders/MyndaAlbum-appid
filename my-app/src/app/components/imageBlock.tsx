@@ -26,6 +26,7 @@ export default function ImageBlock({ src, info = {} }) {
   //Geymir data sem fer a firebase
   const [dataToSend, SetDataToSend] = useState<ImageTransferType[]>([])
   
+  /*
   useEffect(() => {
     const fetchLocationData = async () => {
       const result = await imageFinder(src.imageUrl);
@@ -38,6 +39,7 @@ export default function ImageBlock({ src, info = {} }) {
     };
     fetchLocationData();
   }, [src]);
+ */ //uncomment þegar í final stage
 
   const handleEdit = (field) => {
     setEditMode({ [field]: true });
