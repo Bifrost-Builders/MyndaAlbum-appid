@@ -16,7 +16,7 @@ import undraw_walking_around_25f5 from '@/app/public/undraw_walking_around_25f5.
 const sideBarLinks = [
     {
         imgPath: undraw_sweet_home_dkhr,
-        route: '/secure',
+        route: '/secure/home',
         label: 'Home',
     },
     {
