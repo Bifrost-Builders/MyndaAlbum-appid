@@ -22,7 +22,7 @@ export function readFromFirebase() {
 }
 
 // Function to read a user's age
-function readUserAge(username) {
+export function readUserAge(username) {
     const ageRef = ref(getDatabase(), `User/${username}/Age`);
     onValue(ageRef, (snapshot) => {
         const data = snapshot.val();
@@ -31,7 +31,7 @@ function readUserAge(username) {
 }
 
 // Function to read a user's display name
-function readUserDisplayName(username) {
+export function readUserDisplayName(username) {
     const displayNameRef = ref(getDatabase(), `User/${username}/Display Name`);
     onValue(displayNameRef, (snapshot) => {
         const data = snapshot.val();
@@ -40,7 +40,7 @@ function readUserDisplayName(username) {
 }
 
 // Function to read a user's email
-function readUserEmail(username) {
+export function readUserEmail(username) {
     const emailRef = ref(getDatabase(), `User/${username}/email`);
     onValue(emailRef, (snapshot) => {
         const data = snapshot.val();
@@ -52,7 +52,7 @@ function readUserEmail(username) {
 // READ ALBUM/IMAGES FUNCTIONS  -----------------------------------------------------------------------------------------------------
 
 // Function sem les myndar URL úr realtime database
-function readAlbumImageUrl(username, albumname, imageuuid) {
+export function readAlbumImageUrl(username, albumname, imageuuid) {
     const imageUrlRef = ref(getDatabase(), `Album/${username}/${albumname}/${imageuuid}/imageurl`);
     onValue(imageUrlRef, (snapshot) => {
         const data = snapshot.val();
@@ -61,7 +61,7 @@ function readAlbumImageUrl(username, albumname, imageuuid) {
 }
 
 // Function sem les geoinfo úr mynd í albúmi úr realtime database
-function readImageGeoInfo(username, albumname, imageuuid) {
+export function readImageGeoInfo(username, albumname, imageuuid) {
     const geoInfoRef = ref(getDatabase(), `Album/${username}/${albumname}/${imageuuid}/info`);
     onValue(geoInfoRef, (snapshot) => {
         const data = snapshot.val();
@@ -70,7 +70,7 @@ function readImageGeoInfo(username, albumname, imageuuid) {
 }
 
 // Function sem les allar myndir úr albúmi á realtime database
-function readAlbumImages(username, albumname) {
+export function readAlbumImages(username, albumname) {
     const albumRef = ref(getDatabase(), `Album/${username}/${albumname}`);
     onValue(albumRef, (snapshot) => {
         snapshot.forEach((childSnapshot) => {
