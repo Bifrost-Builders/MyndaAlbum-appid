@@ -82,10 +82,11 @@ export function readAlbumImages(username, albumname) {
     });
 }
 
-
+/*
 readAlbumImages('JonJonsson123', 'Album1');
 readUserAge('JonJonsson123');
 readUserDisplayName('JonJonsson123');
 readUserEmail('JonJonsson123');
 readAlbumImageUrl('JonJonsson123', 'Album1', 'uuid');
 readImageGeoInfo('JonJonsson123', 'Album1', 'uuid');
+*/
