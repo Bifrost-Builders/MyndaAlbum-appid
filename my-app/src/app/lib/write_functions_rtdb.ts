@@ -1,6 +1,4 @@
 import { getDatabase, ref, set } from "firebase/database";
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from "@/app/firebase/firebaseConfig";
 
 // Function to write a user's age
 export function writeUserAge(username, age) {
