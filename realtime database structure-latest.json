@@ -1,8 +1,8 @@
 {
   "album": {
     "jonjonsson123": {
-      "album1": {
-        "uuid": {
+      "album_name": {
+        "image_uuid": {
           "imageurl": "url to image",
           "info": {
             "city": "city name",
