@@ -5,7 +5,9 @@
         "uuid": {
           "imageurl": "url to image",
           "info": {
-            "objectid": "objectid"
+            "city": "city name",
+            "country": "country name ",
+            "province": "province name"
           }
         }
       }

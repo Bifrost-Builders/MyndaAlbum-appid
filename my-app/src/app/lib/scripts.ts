@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { info } from '@uploadcare/upload-client'
 import { getDatabase,ref, child, get } from "firebase/database";
 import { initializeApp } from 'firebase/app';
-import {firebaseConfig} from "@/app/firebase/firebaseConfig"
+import { firebaseConfig } from "@/app/firebase/firebaseConfig"
 
 const firebaseApp = initializeApp(firebaseConfig);
 
