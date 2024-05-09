@@ -1,10 +1,4 @@
 import { getDatabase ,onValue, ref , child, get } from "firebase/database";
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from "@/app/firebase/firebaseConfig";
-
-
-const firebaseApp = initializeApp(firebaseConfig);
-
 
 // READ USER FUNCTIONS -----------------------------------------------------------------------------------------------------
 export function readFromFirebase() {
