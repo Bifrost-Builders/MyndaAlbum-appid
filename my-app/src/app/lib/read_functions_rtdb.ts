@@ -1,29 +1,32 @@
-import { useEffect, useRef } from "react";
 import { getDatabase ,onValue, ref , child, get } from "firebase/database";
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from "@/app/firebase/firebaseConfig";
-
-
-const firebaseApp = initializeApp(firebaseConfig);
-
 
 // READ USER FUNCTIONS -----------------------------------------------------------------------------------------------------
-export function readFromFirebase() {
-  const database = ref(getDatabase());
-  get(child(database, '/User')).then((data) => {
-    if (data.exists()){
-      console.log(data.val())
-    } else {
-      console.log("No data found")
-    };
-  }).catch((e) => {
-    console.log("Error", e)
-  })
+
+// Function to read all usernames
+export function readAllUsernames() {
+    const usersRef = ref(getDatabase(), 'user');
+    onValue(usersRef, (snapshot) => {
+        const data = snapshot.val();
+        const usernames = Object.keys(data);
+        console.log(`Usernames: ${usernames}`);
+    });
+}
+
+// Function to search for a specific username
+export function searchUsername(username) {
+    const userRef = ref(getDatabase(), `user/${username}`);
+    get(userRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            console.log(`User ${username} exists.`);
+        } else {
+            console.log(`User ${username} does not exist.`);
+        }
+    });
 }
 
 // Function to read a user's age
 export function readUserAge(username) {
-    const ageRef = ref(getDatabase(), `User/${username}/Age`);
+    const ageRef = ref(getDatabase(), `user/${username}/age`);
     onValue(ageRef, (snapshot) => {
         const data = snapshot.val();
         console.log(`User's age: ${data}`);
@@ -32,7 +35,7 @@ export function readUserAge(username) {
 
 // Function to read a user's display name
 export function readUserDisplayName(username) {
-    const displayNameRef = ref(getDatabase(), `User/${username}/Display Name`);
+    const displayNameRef = ref(getDatabase(), `user/${username}/displayname`);
     onValue(displayNameRef, (snapshot) => {
         const data = snapshot.val();
         console.log(`User's display name: ${data}`);
@@ -41,7 +44,7 @@ export function readUserDisplayName(username) {
 
 // Function to read a user's email
 export function readUserEmail(username) {
-    const emailRef = ref(getDatabase(), `User/${username}/email`);
+    const emailRef = ref(getDatabase(), `user/${username}/email`);
     onValue(emailRef, (snapshot) => {
         const data = snapshot.val();
         console.log(`User's email: ${data}`);
@@ -51,9 +54,31 @@ export function readUserEmail(username) {
 
 // READ ALBUM/IMAGES FUNCTIONS  -----------------------------------------------------------------------------------------------------
 
+// Function to read all album names
+export function readAllAlbumNames() {
+    const albumsRef = ref(getDatabase(), 'album');
+    onValue(albumsRef, (snapshot) => {
+        const data = snapshot.val();
+        const albumNames = Object.keys(data);
+        console.log(`Album names: ${albumNames}`);
+    });
+}
+
+// Function to search for a specific album name
+export function searchAlbumName(username, albumname) {
+    const albumRef = ref(getDatabase(), `album/${username}/${albumname}`);
+    get(albumRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            console.log(`Album ${albumname} exists for user ${username}.`);
+        } else {
+            console.log(`Album ${albumname} does not exist for user ${username}.`);
+        }
+    });
+}
+
 // Function sem les myndar URL úr realtime database
 export function readAlbumImageUrl(username, albumname, imageuuid) {
-    const imageUrlRef = ref(getDatabase(), `Album/${username}/${albumname}/${imageuuid}/imageurl`);
+    const imageUrlRef = ref(getDatabase(), `album/${username}/${albumname}/${imageuuid}/imageurl`);
     onValue(imageUrlRef, (snapshot) => {
         const data = snapshot.val();
         console.log(`Image URL: ${data}`);
@@ -62,7 +87,7 @@ export function readAlbumImageUrl(username, albumname, imageuuid) {
 
 // Function sem les geoinfo úr mynd í albúmi úr realtime database
 export function readImageGeoInfo(username, albumname, imageuuid) {
-    const geoInfoRef = ref(getDatabase(), `Album/${username}/${albumname}/${imageuuid}/info`);
+    const geoInfoRef = ref(getDatabase(), `album/${username}/${albumname}/${imageuuid}/info`);
     onValue(geoInfoRef, (snapshot) => {
         const data = snapshot.val();
         console.log(`Geo Info: ${data}`);
@@ -71,7 +96,7 @@ export function readImageGeoInfo(username, albumname, imageuuid) {
 
 // Function sem les allar myndir úr albúmi á realtime database
 export function readAlbumImages(username, albumname) {
-    const albumRef = ref(getDatabase(), `Album/${username}/${albumname}`);
+    const albumRef = ref(getDatabase(), `album/${username}/${albumname}`);
     onValue(albumRef, (snapshot) => {
         snapshot.forEach((childSnapshot) => {
             const imageuuid = childSnapshot.key;
@@ -83,6 +108,8 @@ export function readAlbumImages(username, albumname) {
 }
 
 /*
+searchUsername('JonJonsson123');
+searchAlbumName('JonJonsson123', 'Album1');
 readAlbumImages('JonJonsson123', 'Album1');
 readUserAge('JonJonsson123');
 readUserDisplayName('JonJonsson123');
