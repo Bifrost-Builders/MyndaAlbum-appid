@@ -1,5 +1,13 @@
 import { getDatabase, ref, set } from "firebase/database";
 
+export function createUser(username, displayname_value, age_value, email_value) {
+  set(ref(getDatabase(), 'User/' + username), {
+    displayname: displayname_value,
+    email: email_value,
+    age : age_value
+  });
+}
+
 // Function to write a user's age
 export function writeUserAge(username, age) {
     const ageRef = ref(getDatabase(), `User/${username}/Age`);

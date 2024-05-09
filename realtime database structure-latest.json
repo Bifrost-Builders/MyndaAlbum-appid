@@ -1,7 +1,7 @@
 {
-  "Album": {
-    "JonJonsson123": {
-      "Album1": {
+  "album": {
+    "jonjonsson123": {
+      "album1": {
         "uuid": {
           "imageurl": "url to image",
           "info": {
@@ -13,10 +13,10 @@
       }
     }
   },
-  "User": {
-    "JonJonsson123": {
-      "Age": 30,
-      "Display Name": "Jón Jónsson",
+  "user": {
+    "jonjonsson123": {
+      "age": 30,
+      "displayname": "Jón Jónsson",
       "email": "jonjonsson123@gmail.com"
     }
   }
