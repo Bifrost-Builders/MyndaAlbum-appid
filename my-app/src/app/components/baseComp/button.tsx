@@ -9,11 +9,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const ButtonVariant = cva(
-  "my-1 hover:bg-slate-100 hover:-translate-y-1 hover:transition-all z-30",
+  "my-1 hover:-translate-y-1 hover:transition-all z-30",
   {
     variants: {
       variant: {
-        default: "bg-white text-black",
+        default: "bg-white text-black hover:bg-slate-100",
         secondary: "bg-black text-white",
       },
       size: {

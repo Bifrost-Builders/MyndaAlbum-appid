@@ -9,6 +9,8 @@ const gridTemplates = {
   large: "grid-cols-4 md:grid-cols-5 lg:grid-cols-6",
 };
 
+//col-span-2
+//row-span-2
 const imageVariants = [
   "col-span-2",
   "row-span-2", 
