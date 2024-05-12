@@ -28,7 +28,7 @@ export default function LoginPage() {
                     <h2 className=" text-white mb-36 text-3xl p-10 border rounded-md bg-black">Login Page</h2>
                     <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
                         <div className="mb-4">
-                            <label className="block text-2xl">email:</label>
+                            <label className="block text-2xl">Email:</label>
                             <input type="text" value={email} onChange={(e) => setemail(e.target.value)} className="border border-gray-300 rounded-md p-1" />
                         </div>
                         <div className="mb-4">
