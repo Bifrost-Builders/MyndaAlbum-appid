@@ -4,7 +4,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
-import undraw_sweet_home_dkhr from "@/app/public/undraw_Upload_image_re_svxx.png"; // Corrected path
+import undraw_sweet_home_dkhr from "@/app/public/undraw_Upload_image_re_svxx.png";
 import undraw_Edit_photo_re_ton4 from "@/app/public/undraw_Edit_photo_re_ton4.png";
 import undraw_add_friends_re_3xte from "@/app/public/undraw_add_friends_re_3xte.png";
 
@@ -41,7 +41,7 @@ export default function SideBar() {
                             href={item.route}
                             key={item.label}
                             className={clsx(
-                                "p-1 rounded-[5px] flex items-center gap-4", // Horizontal alignment
+                                "p-1 rounded-[5px] flex items-center gap-4", 
                                 {
                                     "bg-blue-500": isActive,
                                 }

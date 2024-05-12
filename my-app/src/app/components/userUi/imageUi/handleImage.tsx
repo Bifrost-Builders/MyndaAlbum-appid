@@ -79,7 +79,7 @@ function App() {
                     />
                 </div>
             </section>
-            <div className="h-full w-full my-3">
+            <div className="absolute top-[80px] left-0 right-0 bottom-0 px-10 py-5" style={{ zIndex: -100 }}>
                 <h1 className="font-semibold text-lg my-1">Your selected images</h1>
 
           {files.length === 0 ?

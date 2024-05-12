@@ -7,7 +7,6 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
-// Ensure these images have transparent backgrounds
 import undraw_sweet_home_dkhr from '@/app/public/undraw_Upload_image_re_svxx.png';
 import undraw_Edit_photo_re_ton4 from '@/app/public/undraw_Edit_photo_re_ton4.png';
 import undraw_add_friends_re_3xte from '@/app/public/undraw_add_friends_re_3xte.png';
@@ -54,7 +53,7 @@ const Sidebar = () => {
             initial={isOpen ? 'open' : 'closed'}
             animate={isOpen ? 'open' : 'closed'}
             variants={sidebarVariants}
-            className="flex h-screen z-40 shadow-md transition-width bg-white"
+            className={clsx("flex h-screen z-40 shadow-md transition-width bg-white fixed")}
         >
             <motion.nav
                 className="flex flex-col items-center px-3 py-5"
