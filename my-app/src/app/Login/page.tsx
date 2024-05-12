@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginPage() {
-    const [username, setUsername] = useState('');
+    const [email, setemail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [error, setError] = useState(null);
@@ -12,12 +12,12 @@ export default function LoginPage() {
     const handleLogin = async () => {
         const auth = getAuth();
         try {
-            await signInWithEmailAndPassword(auth, username, password);
+            await signInWithEmailAndPassword(auth, email, password);
             setIsLoggedIn(true);
             // You can redirect the user to another page upon successful login.
         } catch (error) {
             setError(error.message);
-            alert('Login failed. Please check your username and password.');
+            alert('Login failed. Please check your email and password.');
         }
     };
 
@@ -28,8 +28,8 @@ export default function LoginPage() {
                     <h2 className=" text-white mb-36 text-3xl p-10 border rounded-md bg-black">Login Page</h2>
                     <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
                         <div className="mb-4">
-                            <label className="block text-2xl">Username:</label>
-                            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="border border-gray-300 rounded-md p-1" />
+                            <label className="block text-2xl">email:</label>
+                            <input type="text" value={email} onChange={(e) => setemail(e.target.value)} className="border border-gray-300 rounded-md p-1" />
                         </div>
                         <div className="mb-4">
                             <label className="block text-2xl">Password:</label>
@@ -40,7 +40,7 @@ export default function LoginPage() {
                 </div>
             ) : (
                 <div>
-                    <h2>Welcome, {username}!</h2>
+                    <h2>Welcome, {email}!</h2>
                     {/* You can render the content for logged-in users here */}
                 </div>
             )}
