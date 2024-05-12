@@ -144,30 +144,31 @@ export function readImageGeoInfo(username: string, albumname: string, imageuuid:
     const geoInfoRef = ref(getDatabase(), `album/${username}/${albumname}/${imageuuid}/info`);
     onValue(geoInfoRef, (snapshot) => {
         const data = snapshot.val();
-        console.log(`Geo Info: ${data}`);
+        if (data) {
+            return data;
+        } else {
+            console.log("No geo info found.");
+        }
+    }, (error) => {
+        console.log(`Error reading geo info from database: ${error}`);
     });
 }
 
 // Function sem les allar myndir úr albúmi á realtime database
-export function readAlbumImages(username, albumname) {
+export function readAlbumImages(username: string, albumname: string) {
     const albumRef = ref(getDatabase(), `album/${username}/${albumname}`);
     onValue(albumRef, (snapshot) => {
-        snapshot.forEach((childSnapshot) => {
-            const imageuuid = childSnapshot.key;
-            const imageUrl = childSnapshot.val().imageurl;
-            const geoInfo = childSnapshot.val().info;
-            console.log(`Image ID: ${imageuuid}, Image URL: ${imageUrl}, Geo Info: ${geoInfo}`);
-        });
+        if (snapshot.exists()) {
+            snapshot.forEach((childSnapshot) => {
+                const imageuuid = childSnapshot.key;
+                const imageUrl = childSnapshot.val().imageurl;
+                const geoInfo = childSnapshot.val().info;
+                console.log(`Image ID: ${imageuuid}, Image URL: ${imageUrl}, Geo Info: ${geoInfo}`);
+            });
+        } else {
+            console.log("No images found in album.");
+        }
+    }, (error) => {
+        console.log(`Error reading album images: ${error}`);
     });
 }
-
-/*
-searchUsername('JonJonsson123');
-searchUserAlbum('JonJonsson123', 'Album1');
-readAlbumImages('JonJonsson123', 'Album1');
-readUserAge('JonJonsson123');
-readUserDisplayName('JonJonsson123');
-readUserEmail('JonJonsson123');
-readAlbumImageUrl('JonJonsson123', 'Album1', 'uuid');
-readImageGeoInfo('JonJonsson123', 'Album1', 'uuid');
-*/
