@@ -1,23 +1,23 @@
 "use client"
 
 import React, { useState } from 'react';
-import { auth } from "../firebase/firebaseConfig"; 
-
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    const handleLogin = () => {
-        // Here you can add your authentication logic.
-        // For simplicity, I'm just checking if both username and password are non-empty.
-        if (username && password) {
+    const [error, setError] = useState(null);
+    
+    const handleLogin = async () => {
+        const auth = getAuth();
+        try {
+            await signInWithEmailAndPassword(auth, username, password);
             setIsLoggedIn(true);
             // You can redirect the user to another page upon successful login.
-        } else {
-            // You can show an error message to the user if login fails.
-            alert('Please enter both username and password.');
+        } catch (error) {
+            setError(error.message);
+            alert('Login failed. Please check your username and password.');
         }
     };
 
