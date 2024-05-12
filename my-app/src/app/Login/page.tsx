@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import { app } from '../firebase/firebaseConfig';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginPage() {
@@ -10,7 +11,7 @@ export default function LoginPage() {
     const [error, setError] = useState(null);
     
     const handleLogin = async () => {
-        const auth = getAuth();
+        const auth = getAuth(app);
         try {
             await signInWithEmailAndPassword(auth, email, password);
             setIsLoggedIn(true);
