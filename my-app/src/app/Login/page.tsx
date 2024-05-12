@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import { auth } from "../firebase/firebaseConfig"; 
 
 
 export default function LoginPage() {
