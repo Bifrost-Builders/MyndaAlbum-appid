@@ -34,10 +34,3 @@ export function deleteImage(username, albumname, imageuuid) {
         console.error("Error removing document: ", error);
       });
 }
-
-// Usage 
-/*
-deleteUser('a_username');
-deleteAlbum('a_username', 'an_album_name');
-deleteImage('a_username', 'an_album_name', 'an_image_uuid');
-*/
