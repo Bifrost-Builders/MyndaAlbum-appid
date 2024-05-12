@@ -7,6 +7,7 @@ const gridTemplates = {
   small: "grid-cols-2 md:grid-cols-3 lg:grid-cols-4",
   medium: "grid-cols-3 md:grid-cols-4 lg:grid-cols-5",
   large: "grid-cols-4 md:grid-cols-5 lg:grid-cols-6",
+  supersmall: "grid-cols-1 md:grid-cols-1 lg:grid-cols-1",
 };
 
 const imageVariants = [
@@ -23,7 +24,7 @@ export default function ShowImages({ files }) {
     } else if (imageCount >= 6) {
       return gridTemplates.medium;
     } else {
-      return gridTemplates.small; 
+      return gridTemplates.supersmall; 
     }
   };
 
@@ -48,9 +49,11 @@ export default function ShowImages({ files }) {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               className={clsx(
-                "relative overflow-hidden rounded-[12px]", 
-                gridStyle, 
-                "bg-gray-200" 
+                "relative overflow-hidden rounded-[12px] mb-4", 
+                "bg-gray-200",
+                "w-full md:w-1/2",
+                "mx-auto",
+                "flex justify-center item-center"
               )}
             >
               <ImageBlock src={file.imageUrl} />
@@ -61,3 +64,4 @@ export default function ShowImages({ files }) {
     </AnimatePresence>
   );
 }
+

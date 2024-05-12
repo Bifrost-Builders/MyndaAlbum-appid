@@ -45,7 +45,7 @@ function homePage() {
     <section className='relative min-h-screen h-full w-full'>
       <section className=''>
         <div className='flex justify-center'>
-          {/* Your upload care components */}
+          {}
         </div>
       </section>
       <div className="h-full w-full my-3">

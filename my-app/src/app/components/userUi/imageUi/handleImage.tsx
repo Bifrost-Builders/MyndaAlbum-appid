@@ -14,7 +14,6 @@ LR.registerBlocks(LR);
 //City -> city
 //province -> province
 
-//Data struct for images that are uploaded
 
 type ImageTransferType = {
   uuid: string,
@@ -26,6 +25,7 @@ type ImageTransferType = {
 function App() {
   const baseUrl = "https://ucarecdn.com/";
     const [files, setFiles] = useState<ImageTransferType[]>([]);
+    console.log(files);
     const ctxProviderRef = useRef(null);
 
   useEffect(() => {
@@ -38,7 +38,6 @@ function App() {
         (file) => file.status === 'success',
         );
 
-      // Map the successful files to your ImageTransferType
       const formattedFiles = successfulFiles.map((file) => ({
         uuid: file.uuid,
         fileName: file.fileInfo.originalFilename,
