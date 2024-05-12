@@ -36,8 +36,6 @@ export default function Header() {
                 <Link href={"/"} className="hover:text-gray-200 active:text-gray-300">About</Link>
     
                 <Link href={"/"} className="hover:text-gray-200 active:text-gray-300">Help</Link>
-
-                <Link href={"/Login"} className="hover:text-gray-200 active:text-gray-300">Login</Link>
     
 
             </section>

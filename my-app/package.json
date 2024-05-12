@@ -9,19 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.1.4",
-    "react": "^18",
-    "react-dom": "^18"
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "exif-js": "^2.3.0",
+    "exifreader": "^4.22.1",
+    "firebase": "^10.11.0",
+    "framer-motion": "^11.1.7",
+    "fs": "^0.0.1-security",
+    "next": "^14.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-icons": "^5.2.0",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "18.2.78",
     "@types/react-dom": "^18",
+    "@uploadcare/blocks": "^0.39.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.3",
     "typescript": "5.4.5"
   }
 }

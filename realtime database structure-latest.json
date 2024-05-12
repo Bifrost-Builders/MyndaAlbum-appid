@@ -1,0 +1,23 @@
+{
+  "album": {
+    "jonjonsson123": {
+      "album_name": {
+        "image_uuid": {
+          "imageurl": "url to image",
+          "info": {
+            "city": "city name",
+            "country": "country name ",
+            "province": "province name"
+          }
+        }
+      }
+    }
+  },
+  "user": {
+    "jonjonsson123": {
+      "age": 30,
+      "displayname": "Jón Jónsson",
+      "email": "jonjonsson123@gmail.com"
+    }
+  }
+}
