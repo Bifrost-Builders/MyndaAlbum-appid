@@ -2,7 +2,7 @@
 "use client"
 import React, { useState } from 'react';
 import Login from './login';
-import SignUp from './signUpPage';
+import SignUp from './signup';
 
 export default function Page() {
     const [isSignUp, setIsSignUp] = useState(false);
