@@ -1,11 +1,11 @@
 "use client";
 import LeftSideNav from '@/app/components/userUi/leftSideNav'
 import HandleImage from "@/app/components/userUi/imageUi/handleImage"
-import blabla from "@/app/components/userUi/imageUi/showImages"
+//import blabla from "@/app/components/userUi/imageUi/showImages"
 import Image from "next/image"
 import ShowImages from '@/app/components/userUi/imageUi/showImages'
 import { use, useEffect, useState } from 'react';
-import BlaBla from '@/app/components/userUi/imageUi/homePage'
+//import BlaBla from '@/app/components/userUi/imageUi/homePage'
 //Use client ekki gott!
 import Link from 'next/link'
 import undraw_Upload_image_re_svxx from "@/app/public/undraw_Upload_image_re_svxx.png"
