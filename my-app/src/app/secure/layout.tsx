@@ -3,13 +3,15 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import Loading from '../loading';
+import {app } from '@/app/firebase/firebaseConfig'
 
 const DashboardLayout = ({ children }) => {
     const router = useRouter();
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const auth = getAuth();
+        //Newly untested changed
+        const auth = getAuth(app);
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
