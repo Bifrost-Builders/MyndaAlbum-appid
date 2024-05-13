@@ -40,7 +40,7 @@ export default function emailPage() {
                             onChange={(e) => setemail(e.target.value)}
                             name="Email"
                             placeholder="dingdong@gmail.com"
-                            className="outline-none h-11 rounded-[3px] pl-3 bg-black transition-all placeholder:text-slate-200 hover:border-[3px] border-slate-300 border-opacity-15" />
+                            className="outline-none h-11 text-white rounded-[3px] pl-3 bg-black transition-all placeholder:text-slate-200 hover:border-[3px] border-slate-300 border-opacity-15" />
                 </div>
 
                 <div className="flex flex-col">
@@ -51,7 +51,7 @@ export default function emailPage() {
                             onChange={(e) => setPassword(e.target.value)}
                             name="Email"
                             placeholder="**********"
-                            className="outline-none h-11 rounded-[3px] pl-3 bg-black transition-all placeholder:text-slate-200 hover:border-[3px] border-slate-300 border-opacity-15" />
+                            className="outline-none h-11 text-white rounded-[3px] pl-3 bg-black transition-all placeholder:text-slate-200 hover:border-[3px] border-slate-300 border-opacity-15" />
                 </div>
 
                 <button type="submit" className="bg-white h-11 rounded-md font-semibold text-lg mx-2 hover:bg-slate-200">Click here</button>
