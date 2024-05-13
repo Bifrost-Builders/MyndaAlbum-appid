@@ -34,13 +34,18 @@ export default function LoginPage() {
         // If there are no errors, proceed with login
         if (!Object.values(errorsCopy).some((error) => error !== '')) {
             const auth = getAuth(app);
-            try {
-                await signInWithEmailAndPassword(auth, email, password);
-                setIsLoggedIn(true);
-                // You can redirect the user to another page upon successful login.
-            } catch (error) {
-                setErrors({email: error.message, password: error.message});
-            }
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    setIsLoggedIn(true);
+                    // You can redirect the user to another page upon successful login.
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrors({email: errorMessage, password: errorMessage});
+                });
         }
     };
 
