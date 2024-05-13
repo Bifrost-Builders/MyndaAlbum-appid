@@ -5,7 +5,7 @@ import blabla from "@/app/components/userUi/imageUi/showImages"
 import Image from "next/image"
 import ShowImages from '@/app/components/userUi/imageUi/showImages'
 import { use, useEffect, useState } from 'react';
-import HomePage from '@/app/components/userUi/imageUi/homePage'
+import BlaBla from '@/app/components/userUi/imageUi/homePage'
 //Use client ekki gott!
 import Link from 'next/link'
 import undraw_Upload_image_re_svxx from "@/app/public/undraw_Upload_image_re_svxx.png"
@@ -44,7 +44,7 @@ const UserNavData = [
 import {readFromFirebase} from '../lib/scripts'
 import { MobileSideBar } from '../components/header/navSmall/sideBar';
 import { useCycle } from 'framer-motion';
-export default function homePage() {
+export default function HomePage() {
     const [bgMode, cycleBgMode] = useCycle("white", "black");
     const [bgCard, cycleBgCard] = useCycle("black", "blue-600")
     const [today, setToday] = useState<string>("");
