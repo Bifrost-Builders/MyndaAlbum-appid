@@ -41,7 +41,7 @@ const UserNavData = [
 
 //Linkar i mobile nav sleppa localhost!
 
-import {readFromFirebase} from '../lib/scripts'
+import { readFromFirebase } from '../lib/scripts'
 import { MobileSideBar } from '../components/header/navSmall/sideBar';
 import { useCycle } from 'framer-motion';
 export default function HomePage() {
