@@ -60,6 +60,7 @@ function ImageHandlerMain() {
 
   const handleSubmitAlbum = () => {
     //Upload images to firebase
+    
   }
     return (
         <section className='relative h-full w-full'>

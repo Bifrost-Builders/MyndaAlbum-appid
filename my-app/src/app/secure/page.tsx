@@ -28,7 +28,7 @@ const UserNavData = [
     },
     {
         title: "Log out",
-        Url_Path: "",
+        Url_Path: "/",
     },
 ];
 
