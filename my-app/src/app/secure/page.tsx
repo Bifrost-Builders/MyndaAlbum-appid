@@ -1,11 +1,11 @@
 "use client";
 import LeftSideNav from '@/app/components/userUi/leftSideNav'
 import HandleImage from "@/app/components/userUi/imageUi/handleImage"
-import blabla from "@/app/components/userUi/imageUi/showImages"
+//import blabla from "@/app/components/userUi/imageUi/showImages"
 import Image from "next/image"
 import ShowImages from '@/app/components/userUi/imageUi/showImages'
-import { use, useEffect, useState } from 'react';
-import Blabla from '@/app/components/userUi/imageUi/homePage'
+import { useEffect, useState } from 'react';
+//import BlaBla from '@/app/components/userUi/imageUi/homePage'
 //Use client ekki gott!
 import Link from 'next/link'
 import undraw_Upload_image_re_svxx from "@/app/public/undraw_Upload_image_re_svxx.png"
@@ -41,10 +41,10 @@ const UserNavData = [
 
 //Linkar i mobile nav sleppa localhost!
 
-import {readFromFirebase} from '../lib/scripts'
+import { readFromFirebase } from '../lib/scripts'
 import { MobileSideBar } from '../components/header/navSmall/sideBar';
 import { useCycle } from 'framer-motion';
-export default function homePage() {
+export default function HomePage() {
     const [bgMode, cycleBgMode] = useCycle("white", "black");
     const [bgCard, cycleBgCard] = useCycle("black", "blue-600")
     const [today, setToday] = useState<string>("");
@@ -92,8 +92,9 @@ export default function homePage() {
 
                 <ul className="text-[19px] flex gap-x-11 pt-2">
                     {
-                                UserNavData.map((item) => (
+                                UserNavData.map((item, index) => (
                                     <Link
+                                        key={index}
                                         href={item.Url_Path}
                                         className='hover:text-blue-500'
                                     >{item.title}</Link>
@@ -132,7 +133,7 @@ export default function homePage() {
                         
                         <div className={`text-white flex justify-between items-center max-md:flex-col max-md:text-center max-md:gap-y-3`}>
                             <div className="">
-                                <h1 className="text-xl font-semibold max-md:text-lg">Let's add your travel</h1>
+                                <h1 className="text-xl font-semibold max-md:text-lg">Let&apos;s add your travel</h1>
                                 <p className="text-sm max-md:text-xs">Click to start selecting photos</p>
                             </div>
 
