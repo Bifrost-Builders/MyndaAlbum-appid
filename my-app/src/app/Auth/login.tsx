@@ -1,5 +1,7 @@
 // LoginPage.tsx
 import React, { useState } from 'react';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from '../firebase/firebaseConfig';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
@@ -29,11 +31,21 @@ export default function LoginPage() {
 
         setErrors(errorsCopy);
 
-        // If there are no errors, proceed with login
-        if (!Object.values(errorsCopy).some((error) => error !== '')) {
-            // Add your login logic here
-            console.log('Email:', email);
-            console.log('Password:', password);
+         // If there are no errors, proceed with login
+         if (!Object.values(errorsCopy).some((error) => error !== '')) {
+            const auth = getAuth(app);
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log("You signed in successfully!");
+                    // You can perform additional actions here
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // Handle errors here
+                });
         }
     };
 
