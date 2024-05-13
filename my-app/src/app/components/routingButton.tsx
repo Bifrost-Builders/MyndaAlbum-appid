@@ -16,15 +16,16 @@ import handleClickByRef from "../lib/scripts";
 type tpr = {
     route?: string,
     title?: string,
+    style?: string,
 }
 
-export default function RoutingButton({ route = "/", title }: tpr) {
+export default function RoutingButton({ route = "/", title, style }: tpr) {
     const linkRef = React.useRef(null);
 
     return (
         <>
         <Link href={route} style={{ display: 'none' }} ref={linkRef} />
-            <Button onClick={() => handleClickByRef(linkRef)} title={ title } />
+            <Button className={style} onClick={() => handleClickByRef(linkRef)} title={ title } />
         </>
     )
 }
