@@ -202,7 +202,6 @@ export default function homePage() {
                             />
 
                         </div>
-
                         <Image
                             src={undraw_Upload_image_re_svxx}
                             alt=''
