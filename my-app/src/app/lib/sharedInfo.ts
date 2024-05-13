@@ -1,4 +1,26 @@
 
+/*
+
+    Color pallete:
+
+    Backgrounds
+    <!-- bg-blue-600 -->
+    <!-- bg-blue-700 -->
+    <!-- bg-white -->
+    <!-- bg-slate-100 -->
+    <!-- bg-black -->
+
+    Text
+    text-white
+    text-black
+    text-slate-100
+    text-gray-100
+    text-blue-600
+    text-blue-700
+
+
+*/
+
 /* 
 
     File for shared info variables

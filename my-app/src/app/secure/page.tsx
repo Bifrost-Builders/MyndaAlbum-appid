@@ -1,11 +1,11 @@
 "use client";
 import LeftSideNav from '@/app/components/userUi/leftSideNav'
 import HandleImage from "@/app/components/userUi/imageUi/handleImage"
-import blabla from "@/app/components/userUi/imageUi/showImages"
+//import blabla from "@/app/components/userUi/imageUi/showImages"
 import Image from "next/image"
 import ShowImages from '@/app/components/userUi/imageUi/showImages'
-import { use, useEffect, useState } from 'react';
-import Blabla from '@/app/components/userUi/imageUi/homePage'
+import { useEffect, useState } from 'react';
+//import BlaBla from '@/app/components/userUi/imageUi/homePage'
 //Use client ekki gott!
 import Link from 'next/link'
 import undraw_Upload_image_re_svxx from "@/app/public/undraw_Upload_image_re_svxx.png"
@@ -18,7 +18,6 @@ import MobileHeader from '../components/header/navSmall/mobileHeader';
 //Add profile pic for smaller dev?
 //New link? add here
 
-
 //Data static needs change
 //Logic for next and preview
 //When log in is comp then update User into dync
@@ -28,7 +27,7 @@ import MobileHeader from '../components/header/navSmall/mobileHeader';
 
 //Linkar i mobile nav sleppa localhost!
 
-import {readFromFirebase} from '../lib/scripts'
+import { readFromFirebase } from '../lib/scripts'
 import { MobileSideBar } from '../components/header/navSmall/sideBar';
 import { useCycle } from 'framer-motion';
 import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
@@ -128,9 +127,11 @@ export default function homePage() {
 
                 <ul className="text-[19px] flex gap-x-11 pt-2">
                     {
-                                UserNavData.map((item) => (
+                                UserNavData.map((item, index) => (
                                     <Link
                                     href={item.Url_Path}
+                                        key={index}
+                                        href={item.Url_Path}
                                         className='hover:text-blue-500'
                                     onClick={item.action}
                                     >{item.title}</Link> 
@@ -169,7 +170,7 @@ export default function homePage() {
                         
                         <div className={`text-white flex justify-between items-center max-md:flex-col max-md:text-center max-md:gap-y-3`}>
                             <div className="">
-                                <h1 className="text-xl font-semibold max-md:text-lg">Let's add your travel</h1>
+                                <h1 className="text-xl font-semibold max-md:text-lg">Let&apos;s add your travel</h1>
                                 <p className="text-sm max-md:text-xs">Click to start selecting photos</p>
                             </div>
 

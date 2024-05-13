@@ -15,11 +15,24 @@ type imageProps = {
     province: string,
 }
 
+
 type writingProps = {
     userName: string,
     folder: string,
     imageInfo: imageProps
 };
+
+const user = {
+    username: "",
+    foldr: "",
+    uuid: "",
+    imageInfo: {
+        imageUrl: "",
+        city: "",
+        country: "",
+        province: "",
+    }
+}
 
 function writeToAlbum(obj: writingProps) {
     return new Promise((resolve, reject) => {
