@@ -1,5 +1,5 @@
 // SignUp.tsx
-import { app } from '../../firebase/firebaseConfig';
+import { app } from '../firebase/firebaseConfig';
 import React, { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
