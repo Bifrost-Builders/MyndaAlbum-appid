@@ -1,9 +1,8 @@
-const apiKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
-
 import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
-export const firebaseConfig = {
-    apiKey:apiKey,
+const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: "verkefni-4-og-5-i-vefthroun.firebaseapp.com",
     projectId: "verkefni-4-og-5-i-vefthroun",
     messagingSenderId: "769414348370",
@@ -11,4 +10,9 @@ export const firebaseConfig = {
     databaseURL: "https://verkefni-4-og-5-i-vefthroun-default-rtdb.firebaseio.com/"
 };
 
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+const googleAuthProvider = new GoogleAuthProvider();
+
+export { firebaseConfig,app,auth, googleAuthProvider };

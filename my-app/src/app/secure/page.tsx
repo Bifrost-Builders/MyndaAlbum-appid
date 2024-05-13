@@ -17,20 +17,6 @@ import MobileHeader from '../components/header/navSmall/mobileHeader';
 //Remove button and replace with button comp
 //Add profile pic for smaller dev?
 //New link? add here
-const UserNavData = [
-    {
-        title: "Overview",
-        Url_Path: "/secure",
-    },
-    {
-        title: "Settings",
-        Url_Path: "/secure/settings",
-    },
-    {
-        title: "Log out",
-        Url_Path: "/",
-    },
-];
 
 //Data static needs change
 //Logic for next and preview
@@ -44,12 +30,18 @@ const UserNavData = [
 import { readFromFirebase } from '../lib/scripts'
 import { MobileSideBar } from '../components/header/navSmall/sideBar';
 import { useCycle } from 'framer-motion';
-export default function HomePage() {
+import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
+
+
+export default function homePage() {
+    const router = useRouter();
     const [bgMode, cycleBgMode] = useCycle("white", "black");
     const [bgCard, cycleBgCard] = useCycle("black", "blue-600")
     const [today, setToday] = useState<string>("");
     const [hasAlbum, setHasAlbum] = useState<boolean>(false);
-    
+    const [user, setUser] = useState(null);
+    const [userName, setUserName] = useState(null);
     const [shouldPopModelBeOpen, setPopUpModal] = useState<boolean>(false);
     
     const handleAdd = () => {
@@ -59,6 +51,33 @@ export default function HomePage() {
         console.log("clicked")
     };
 
+    
+    const handleLogout = async () => {
+        try {
+            const auth = getAuth();
+            await signOut(auth);
+            router.push('/');
+            console.log("Log out")
+        } catch (error) {
+            console.error('Error signing out:', error);
+        }
+    };
+    const UserNavData = [
+        {
+            title: "Overview",
+            Url_Path: "/secure",
+        },
+        {
+            title: "Settings",
+            Url_Path: "/secure/settings",
+        },
+        {
+            title: "Log out",
+            action: () => handleLogout(),
+            Url_Path: "",
+        },
+    ];
+
     const getTodayDay = () => {
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         //const d = new Date();
@@ -67,7 +86,23 @@ export default function HomePage() {
     }
     
     useEffect(() => {
-        setToday(getTodayDay());
+
+        const auth = getAuth();
+        const i = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user);
+                setToday(getTodayDay());
+                if (user["displayName"] != null) {
+                    setUserName(user["displayName"])
+                } else {
+                    setUserName(user["email"])
+                };
+                console.log(user);
+            } else {
+                router.push("/Auth");
+            }
+        })
+        return () => i();
     }, [])
 
     return (
@@ -94,10 +129,12 @@ export default function HomePage() {
                     {
                                 UserNavData.map((item, index) => (
                                     <Link
+                                    href={item.Url_Path}
                                         key={index}
                                         href={item.Url_Path}
                                         className='hover:text-blue-500'
-                                    >{item.title}</Link>
+                                    onClick={item.action}
+                                    >{item.title}</Link> 
                           ))      
                                 
                     }
@@ -116,7 +153,7 @@ export default function HomePage() {
                 
                 <section className="absolute top-36 md:top-40">
 
-                <h1 className="text-3xl font-semibold">Welcome user</h1>
+                        <h1 className="text-3xl font-semibold">Welcome { userName}</h1>
                 <p>Today is { today }</p>
 
                 </section>
@@ -164,23 +201,19 @@ export default function HomePage() {
                                 size='sm'
                                 onClick={() => handleAdd()}
                             />
-
                         </div>
-
                         <Image
                             src={undraw_Upload_image_re_svxx}
                             alt=''
-                            height={250}
-                            width={300}
+                            height={200}
+                            width={255}
                             className='h-fit w-fit m-auto'
                         ></Image>
-
                     </div>
                 }
 
             </section>
-
-            </section>
+        </section>
 
     );
 }

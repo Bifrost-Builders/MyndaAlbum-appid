@@ -33,6 +33,7 @@ export const LinkNames = ["Home", "Demo", "QA", "About", "Find your group", "Sig
 
 //Items will be route (index by LinkNames) doest need / at start
 export const LinkRoutes = ["", "Demo", "Qa", "About", "findyourgroup", "Auth"]
+  
 
 export const UserNavData = [
     {
@@ -45,6 +46,7 @@ export const UserNavData = [
     },
     {
         title: "Log out",
+        action: "yes",
         Url_Path: "",
     },
 ];
