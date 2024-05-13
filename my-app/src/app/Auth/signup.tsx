@@ -1,5 +1,7 @@
 // SignUp.tsx
+import { app } from '../firebase/firebaseConfig';
 import React, { useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUp() {
     const [email, setEmail] = useState('');
@@ -53,18 +55,34 @@ export default function SignUp() {
         }
 
         setErrors(errorsCopy);
-
+        
+        const formData = new FormData();
         if (!Object.values(errorsCopy).some((error) => error !== '')) {
             // All fields are valid, proceed with sign-up
-            const formData = new FormData();
-            formData.append('email', email);
-            formData.append('password', password);
-            formData.append('confirmPassword', confirmPassword);
-            formData.append('fullName', fullName);
-            formData.append('username', username);
-            if (profilePic) {
-                formData.append('profilePic', profilePic);
-            }
+            const auth = getAuth(app);
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    
+                    formData.append('email', email);
+                    formData.append('password', password);
+                    formData.append('confirmPassword', confirmPassword);
+                    formData.append('fullName', fullName);
+                    formData.append('username', username);
+                    if (profilePic) {
+                        formData.append('profilePic', profilePic);
+                    }
+                    console.log('Created User:', username);
+                    
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log('Error:', errorMessage);
+                });
+            
+        
             
             // Now you can submit formData to your backend or perform any necessary actions
             console.log('Form Data:', formData);
