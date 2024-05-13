@@ -13,6 +13,8 @@ import clsx from 'clsx';
 import Button from '../components/baseComp/button';
 
 import MobileHeader from '../components/header/navSmall/mobileHeader';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { getUserAlbums } from '../ev1/page'
 
 //Remove button and replace with button comp
 //Add profile pic for smaller dev?
@@ -26,6 +28,7 @@ import MobileHeader from '../components/header/navSmall/mobileHeader';
 //Search logic
 
 //Linkar i mobile nav sleppa localhost!
+
 
 import { readFromFirebase } from '../lib/scripts'
 import { MobileSideBar } from '../components/header/navSmall/sideBar';
@@ -43,7 +46,9 @@ export default function homePage() {
     const [user, setUser] = useState(null);
     const [userName, setUserName] = useState(null);
     const [shouldPopModelBeOpen, setPopUpModal] = useState<boolean>(false);
-    
+    const [userAlbums, setUserAlbums] = useState([]);
+
+
     const handleAdd = () => {
         setPopUpModal(!shouldPopModelBeOpen);
         cycleBgMode();
@@ -51,7 +56,6 @@ export default function homePage() {
         console.log("clicked")
     };
 
-    
     const handleLogout = async () => {
         try {
             const auth = getAuth();
@@ -105,6 +109,24 @@ export default function homePage() {
         return () => i();
     }, [])
 
+    useEffect(() => {
+        const fetchUserAlbums = async () => {
+            try {
+                console.log("asr: ", userName)
+                const albums = await getUserAlbums(userName);
+                setUserAlbums(albums);
+                //Mogulega checka fyrst
+                setHasAlbum(true);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+    
+        fetchUserAlbums();
+    }, [userName, ]);
+
+    console.log("User album",userAlbums)
+
     return (
         <section className="min-h-screen w-full overflow-hidden ">
 
@@ -131,7 +153,6 @@ export default function homePage() {
                                     <Link
                                     href={item.Url_Path}
                                         key={index}
-                                        href={item.Url_Path}
                                         className='hover:text-blue-500'
                                     onClick={item.action}
                                     >{item.title}</Link> 
@@ -182,7 +203,7 @@ export default function homePage() {
 
                         </div>
 
-                        <HandleImage />
+                        <HandleImage userName={userName} modal={ handleAdd } />
                     </div>
                     
                     :
@@ -202,13 +223,31 @@ export default function homePage() {
                                 onClick={() => handleAdd()}
                             />
                         </div>
-                        <Image
-                            src={undraw_Upload_image_re_svxx}
-                            alt=''
-                            height={200}
-                            width={255}
-                            className='h-fit w-fit m-auto'
-                        ></Image>
+                        {userAlbums.length != 0 ?
+                            Object.keys(userAlbums).map((albumName) => (
+                                <div key={albumName} className="mt-4">
+                                    <h2 className="text-xl font-semibold">{albumName}</h2>
+                                    <div className="grid grid-cols-3 gap-4">
+                                        {Object.keys(userAlbums[albumName]).map((imageId) => (
+                                            <div key={imageId}>
+                                                <img src={userAlbums[albumName][imageId].imageurl} alt="Album" className="w-full h-auto rounded-md" />
+                                                <p className="text-sm">City: {userAlbums[albumName][imageId].info.city}</p>
+                                                <p className="text-sm">Country: {userAlbums[albumName][imageId].info.country}</p>
+                                                <p className="text-sm">Province: {userAlbums[albumName][imageId].info.province}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))
+                            :
+                            <Image
+                                src={undraw_Upload_image_re_svxx}
+                                alt=''
+                                height={200}
+                                width={255}
+                                className='h-fit w-fit m-auto'
+                            ></Image>
+                        }
                     </div>
                 }
 

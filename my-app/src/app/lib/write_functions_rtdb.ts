@@ -112,7 +112,9 @@ export function renameAlbum(username, currentAlbumName, newAlbumName) {
 
 // Function to write a new picture to an album
 export function writeNewPicture(username, albumname, imageuuid, imageurl, city, country, province) {
-    const pictureRef = ref(getDatabase(), `album/${username}/${albumname}/${imageuuid}`);
+    //!!!nst is needed
+    let nst = username.replace(/[\.\#$\[\]@]/g, '').trim();
+    const pictureRef = ref(getDatabase(), `album/${nst}/${albumname}/${imageuuid}`);
     set(pictureRef, {
         imageurl: imageurl,
         info: {

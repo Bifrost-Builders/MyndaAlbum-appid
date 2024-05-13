@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { imageFinder } from '../lib/scripts';
-import { ImageTransferType } from './userUi/imageUi/handleImage';
+//import { ImageTransferType } from './userUi/imageUi/handleImage';
 import fileInformation from '../lib/scripts'
 
 type SetEditStruct = {
@@ -25,7 +25,7 @@ export default function ImageBlock({ src, info = {} }) {
   const [editMode, setEditMode] = useState<SetEditStruct>({}); 
   const [tempText, setTempText] = useState<EditStruct>({}); 
   //Geymir data sem fer a firebase
-  const [dataToSend, SetDataToSend] = useState<ImageTransferType[]>([])
+  const [dataToSend, SetDataToSend] = useState([])
   /*
   useEffect(() => {
     const fetchLocationData = async () => {

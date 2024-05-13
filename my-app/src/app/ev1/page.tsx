@@ -22,18 +22,6 @@ type writingProps = {
     imageInfo: imageProps
 };
 
-const user = {
-    username: "",
-    foldr: "",
-    uuid: "",
-    imageInfo: {
-        imageUrl: "",
-        city: "",
-        country: "",
-        province: "",
-    }
-}
-
 function writeToAlbum(obj: writingProps) {
     return new Promise((resolve, reject) => {
         if (obj) {
@@ -48,8 +36,8 @@ function writeToAlbum(obj: writingProps) {
         }
     })
 };
-
-function getUserAlbums(userName) {
+/* 
+export function getUserAlbums(userName) {
     return new Promise((resolve, reject) => {
         const req = async () => {
             try {
@@ -67,6 +55,23 @@ function getUserAlbums(userName) {
         };
         req();
     });
+}
+ */
+
+export async function getUserAlbums(userName) {
+    let unr = userName.replace(/[\.\#$\[\]@]/g, '').trim();
+    try {
+        const databaseRef = ref(getDatabase());
+        const snapshot = await get(child(databaseRef, `/album/${unr}`));
+        if (snapshot.exists()) {
+            const albumsObject = snapshot.val();
+            return albumsObject;
+        } else {
+            throw new Error("No data found");
+        }
+    } catch (error) {
+        throw new Error(`Failed because of: ${error}`);
+    }
 }
 
 type StorageType = {
@@ -94,6 +99,22 @@ function Ev1() {
         fetchAlbums();
     }, [inputField]);
 
+    useEffect(() => {
+        const user: writingProps = {
+            userName: "jonjonsson123",
+            folder: "123",
+            imageInfo: {
+                uuid: "113",
+                imageUrl: "www",
+                city: "llll",
+                country: "224fr",
+                province: "asjcij",
+            }
+        }
+        
+        writeToAlbum(user)
+    }, [])
+
     return (
         <section className='h-screen w-full overflow-hidden bg-slate-100 px-10 py-5'>
             <h1 className='text-xl'>Dev page</h1>
@@ -106,32 +127,11 @@ function Ev1() {
                 <input
                     type="text"
                     placeholder="Search for album with name"
+                    value={inputField}
                     onChange={e => setInputField(e.target.value)}
                 />
 
-                {loading ? (
-                    <p>Loading...</p>
-                ) : error ? (
-                    <p>Error: {error}</p>
-                ) : albums.length === 0 ? (
-                    <p>No data found</p>
-                ) : (
-                    Object.keys(albums).map((albumKey) => (
-                        <div key={albumKey}>
-                            <h2>{albumKey}</h2>
-                            <ul>
-                                {Object.values(albums[albumKey]).map((imageInfo: StorageType, index) => (
-                                    <li key={index}>
-                                        <img src={imageInfo?.imageUrl} alt={`Image ${index}`} />
-                                        <p>City: {imageInfo?.info.city || ""}</p>
-                                        <p>Country: {imageInfo?.info.country || ""}</p>
-                                        <p>Province: {imageInfo?.info.province || ""}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))
-                )}
+                
             </section>
         </section>
     );
