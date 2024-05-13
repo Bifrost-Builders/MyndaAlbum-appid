@@ -92,8 +92,9 @@ export default function HomePage() {
 
                 <ul className="text-[19px] flex gap-x-11 pt-2">
                     {
-                                UserNavData.map((item) => (
+                                UserNavData.map((item, index) => (
                                     <Link
+                                        key={index}
                                         href={item.Url_Path}
                                         className='hover:text-blue-500'
                                     >{item.title}</Link>
@@ -132,7 +133,7 @@ export default function HomePage() {
                         
                         <div className={`text-white flex justify-between items-center max-md:flex-col max-md:text-center max-md:gap-y-3`}>
                             <div className="">
-                                <h1 className="text-xl font-semibold max-md:text-lg">Let's add your travel</h1>
+                                <h1 className="text-xl font-semibold max-md:text-lg">Let&apos;s add your travel</h1>
                                 <p className="text-sm max-md:text-xs">Click to start selecting photos</p>
                             </div>
 
