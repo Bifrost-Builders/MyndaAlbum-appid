@@ -1,5 +1,7 @@
 // SignUp.tsx
+import { app } from '../firebase/firebaseConfig';
 import React, { useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUp() {
     const [email, setEmail] = useState('');
@@ -65,6 +67,18 @@ export default function SignUp() {
             if (profilePic) {
                 formData.append('profilePic', profilePic);
             }
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log('Created User:', username);
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log('Error:', errorMessage);
+                });
             
             // Now you can submit formData to your backend or perform any necessary actions
             console.log('Form Data:', formData);
