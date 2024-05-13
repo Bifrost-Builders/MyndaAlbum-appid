@@ -200,7 +200,6 @@ export default function homePage() {
                                 size='sm'
                                 onClick={() => handleAdd()}
                             />
-
                         </div>
                         <Image
                             src={undraw_Upload_image_re_svxx}
@@ -209,13 +208,11 @@ export default function homePage() {
                             width={255}
                             className='h-fit w-fit m-auto'
                         ></Image>
-
                     </div>
                 }
 
             </section>
-
-            </section>
+        </section>
 
     );
 }
