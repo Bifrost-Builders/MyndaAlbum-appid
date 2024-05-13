@@ -4,7 +4,7 @@ import HandleImage from "@/app/components/userUi/imageUi/handleImage"
 //import blabla from "@/app/components/userUi/imageUi/showImages"
 import Image from "next/image"
 import ShowImages from '@/app/components/userUi/imageUi/showImages'
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 //import BlaBla from '@/app/components/userUi/imageUi/homePage'
 //Use client ekki gott!
 import Link from 'next/link'
