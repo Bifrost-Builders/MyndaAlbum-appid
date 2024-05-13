@@ -64,7 +64,7 @@ function ImageHandlerMain() {
     return (
         <section className='relative h-full w-full'>
             <section className='my-8 h-32 rounded-[12px] shadow-sm p-5 border-2 border-slate-300 border-opacity-20'>
-                <h1 className="font-semibold text-lg mb-5 text-center">Click the button to add image</h1>
+                <h1 className="font-semibold text-lg mb-5 text-center text-white">Click the button to add image</h1>
                 <div className='flex justify-center'>
                         <lr-config
                         ctx-name="my-uploader"
@@ -83,18 +83,19 @@ function ImageHandlerMain() {
                     />
                 </div>
             </section>
-            <div className="h-full w-full my-3">
+            <div className="min-h-full w-full mt-3 mb-12">
           {files.length === 0 ?
             <>
               
             </>
             
             : <>
-              <h1 className="font-semibold text-lg my-1">Your selected images</h1>
+              <h1 className="font-semibold text-lg my-1 text-white max-md:text-center">Your selected images</h1>
               <ShowImages files={files} />
-              <div className='h-[20px] w-full flex justify-center itme-center'>
+              <div className='h-[120px] w-full flex justify-center itme-center'>
                 <Button
                   title='Create album'
+                  variant='secondary'
                   onClick={() => handleSubmitAlbum()}
                 ></Button>
               </div>

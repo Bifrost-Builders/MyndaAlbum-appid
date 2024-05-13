@@ -12,7 +12,7 @@ export default function MobileHeader({ isSticky }) {
       )}
     >
       <h1 className="text-3xl font-bold text-white">Kolbri</h1>
-      <MobileSideBar />
+      <MobileSideBar userMenu={false}/>
     </header>
   );
 }

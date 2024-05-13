@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <>{isPhone ? (
-      <MobileHeader isSticky={isSticky} />
+      <MobileHeader isSticky={isSticky}  />
     ) : (
       <PcHeader />
     )}</>

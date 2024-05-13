@@ -12,8 +12,10 @@ import undraw_Upload_image_re_svxx from "@/app/public/undraw_Upload_image_re_svx
 import clsx from 'clsx';
 import Button from '../components/baseComp/button';
 
-//Remove button and replace with button comp
+import MobileHeader from '../components/header/navSmall/mobileHeader';
 
+//Remove button and replace with button comp
+//Add profile pic for smaller dev?
 //New link? add here
 const UserNavData = [
     {
@@ -22,7 +24,7 @@ const UserNavData = [
     },
     {
         title: "Settings",
-        Url_Path: "",
+        Url_Path: "/secure/settings",
     },
     {
         title: "Log out",
@@ -36,132 +38,148 @@ const UserNavData = [
 //Add travel should be modal
 //Black bg should be good icon or photo
 //Search logic
-export default function homePage() {
-    const [hasAlbum, setHasAlbum] = useState<boolean>(false);
-    const [shouldPopModelBeOpen, setPopUpModal] = useState<boolean>(false);
 
+//Linkar i mobile nav sleppa localhost!
+
+import {readFromFirebase} from '../lib/scripts'
+import { MobileSideBar } from '../components/header/navSmall/sideBar';
+import { useCycle } from 'framer-motion';
+export default function homePage() {
+    const [bgMode, cycleBgMode] = useCycle("white", "black");
+    const [bgCard, cycleBgCard] = useCycle("black", "blue-600")
+    const [today, setToday] = useState<string>("");
+    const [hasAlbum, setHasAlbum] = useState<boolean>(false);
+    
+    const [shouldPopModelBeOpen, setPopUpModal] = useState<boolean>(false);
+    
     const handleAdd = () => {
         setPopUpModal(!shouldPopModelBeOpen);
+        cycleBgMode();
+        cycleBgCard();
+        console.log("clicked")
     };
 
+    const getTodayDay = () => {
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        //const d = new Date();
+        //console.log(weekday[d.getDay()]);
+        return weekday[new Date().getDay()];
+    }
+    
+    useEffect(() => {
+        setToday(getTodayDay());
+    }, [])
+
     return (
-        <section className="h-screen bg-white relative">
+        <section className="min-h-screen w-full overflow-hidden ">
 
-            <section className={clsx(
-                "h-96 text-white px-20 py-10 transition-all",
-                {
-                    "bg-black": shouldPopModelBeOpen === false,
-                    "bg-blue-600": shouldPopModelBeOpen === true,
-                }    
-            )}>
-                
-                <nav className="flex justify-between w-full">
-            
-                <h1 className="text-2xl font-semibold">Kolbri</h1>
+            <div className="h-screen w-full">
 
-                <ul className="flex gap-12 max-sm:hidden">
-                        {UserNavData.map((d, i) => (
-                            <Link href={d.Url_Path} className={clsx(
-                                "",
-                                {
-                                    'hover:text-blue-500': shouldPopModelBeOpen === false,
-                                    'hover:text-slate-200': shouldPopModelBeOpen === true,
-                                }
-                            )}>{d.title}</Link>
-                        ) )}
-                </ul>
+                <nav className={`bg-${bgCard} transition-all h-96 flex justify-between items-start text-slate-200 px-20 py-5 md:py-12 max-md:px-10`}>
 
-                <div className="h-8 w-8 bg-blue-500 rounded-full"></div>
-                </nav>
+                <div className="flex justify-between items-center w-full md:hidden z-50">
 
-                <div className="my-9">
-                <h1 className="text-4xl font-bold max-sm:text-3xl max-sm:text-center">Welcome User </h1>
-                <p className="text-sm text-gray-200 py-1 px-1 max-sm:text-center">5/10/2024</p>
+                    <h1 className="text-3xl font-semibold">Kolbri</h1>
+
+                    <div className='text-black'>
+                        <MobileSideBar userMenu={true} />
+                    </div>
+
                 </div>
 
-            </section>
-            
-            <section className={clsx(
-                "absolute top-[26rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-xl px-8 py-8 w-5/6 max-md:top-[500px] max-sm:top-[430px] min-h-[25rem] mb-4",
-                {
-                    "bg-white": shouldPopModelBeOpen === false,
-                    "bg-black": shouldPopModelBeOpen === true,
-                }
-            ) }>
-                
-                {
-                    shouldPopModelBeOpen ?
-                        <>
-                            <section className="w-full text-white mb-6">
+                    <div className={`bg-${bgCard} flex items-center justify-between w-full max-md:hidden`}>
+                    <h1 className="text-4xl font-semibold">Kolbri</h1>
 
-                                <nav className="flex justify-between items-center w-full">
-                                    <div>  
-                                    <h1 className="font-bold text-2xl">Create your travel</h1>
-                                    <p>Here can you create your folder</p>
-                                    </div>
-                                    <Button
-                                        size='sm'
-                                        className='z-50'
-                                        title='Exit'
-                                        onClick={() => handleAdd()}
-                                    >
-                                        Close
-                                    </Button>
-                                </nav>
-
-                                <HandleImage />
-
-                                </section>
-                        </>
-                        :
-                        <>
-                            <section className="flex justify-between items-center mb-6">
-                                <div>
-                                    <h1 className="text-2xl font-semibold">Your Travel</h1>
-                                    {
-                                        hasAlbum ? <p className="text-gray-500 text-sm max-sm:text-xs">Here is an overview of your travel</p> : <p className='text-gray-500 text-sm max-sm:text-xs'>Currently nothing has been added</p>
-                                    }
-                                </div>
-                                <Button
-                                    variant='secondary'
-                                    size='sm'
-                                    title='Add album'
-                                    onClick={() => handleAdd()}    
-                                >Add travel
-                                </Button>
-                            </section>
-                            
-                            {
-                                hasAlbum ? <input type="text" className="border border-gray-300 shadow-sm rounded-md h-10 w-full mb-4 px-2 outline-none hover:border-gray-400" placeholder="Search" /> : <></>
-
-                            }
-
-                            {
-                                hasAlbum 
-                                    ? <div>True</div>
-                                    :   <div>
-                                        <Image
-                                            src={undraw_Upload_image_re_svxx}
-                                            alt='No albums'
-                                            height={200}
-                                            width={400}
-                                            className='m-auto'
-                                        />
-                                        </div>
+                <ul className="text-[19px] flex gap-x-11 pt-2">
+                    {
+                                UserNavData.map((item) => (
+                                    <Link
+                                        href={item.Url_Path}
+                                        className='hover:text-blue-500'
+                                    >{item.title}</Link>
+                          ))      
                                 
-                            }
+                    }
+                </ul>
 
-                            {
-                                hasAlbum ? <div className="flex gap-3 text-gray-600 absolute right-8 bottom-3">
-                                <p className="hover:text-slate-500">Preview</p>
-                                <p className="hover:text-slate-500">Next</p>
-                                </div> : <></>
-                            }
-                        </>
+                
+                <Image
+                    height={10}
+                    src={undraw_Upload_image_re_svxx}
+                    alt=''
+                    width={10}
+                    className='size-10 rounded-full'
+                />
                         
+                </div>
+                
+                <section className="absolute top-36 md:top-40">
+
+                <h1 className="text-3xl font-semibold">Welcome user</h1>
+                <p>Today is { today }</p>
+
+                </section>
+
+                </nav>
+
+            </div>
+
+            <section className={`bg-${bgMode} transition-all min-h-96 h-auto absolute inset-y-1/2 inset-x-20 inset-y-20 transform -translate-y-1/2 shadow-xl rounded-[12px] top-[28rem] max-md:inset-x-10`}>
+                    
+                {shouldPopModelBeOpen ?
+                    
+                    <div className='h-full w-full px-5 py-5 z-50'>
+                        
+                        <div className={`text-white flex justify-between items-center max-md:flex-col max-md:text-center max-md:gap-y-3`}>
+                            <div className="">
+                                <h1 className="text-xl font-semibold max-md:text-lg">Let's add your travel</h1>
+                                <p className="text-sm max-md:text-xs">Click to start selecting photos</p>
+                            </div>
+
+                            <Button
+                                title='Cancel'
+                                size='sm'
+                                onClick={() => handleAdd()}
+                            />
+
+                        </div>
+
+                        <HandleImage />
+                    </div>
+                    
+                    :
+
+                    <div className="min-h-full w-full px-5 py-5 mb-12">
+
+                        <div className="flex justify-between items-center max-md:flex-col max-md:text-center max-md:gap-y-3">
+                            <div className="">
+                                <h1 className="text-xl font-semibold max-md:text-lg">Your travel is here</h1>
+                                <p className="text-sm max-md:text-xs">Currently you have no travel albums</p>
+                            </div>
+
+                            <Button
+                                title='Add travel'
+                                variant='secondary'
+                                size='sm'
+                                onClick={() => handleAdd()}
+                            />
+
+                        </div>
+
+                        <Image
+                            src={undraw_Upload_image_re_svxx}
+                            alt=''
+                            height={250}
+                            width={300}
+                            className='h-fit w-fit m-auto'
+                        ></Image>
+
+                    </div>
                 }
 
             </section>
-        </section>
+
+            </section>
+
     );
 }

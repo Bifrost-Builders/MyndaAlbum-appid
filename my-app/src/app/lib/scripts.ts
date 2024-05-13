@@ -8,7 +8,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 export function readFromFirebase() {
   const database = ref(getDatabase());
-  get(child(database, '/User')).then((data) => {
+  get(child(database, '/')).then((data) => {
     if (data.exists()){
       console.log(data.val())
     } else {
