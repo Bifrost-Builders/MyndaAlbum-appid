@@ -5,7 +5,7 @@ import blabla from "@/app/components/userUi/imageUi/showImages"
 import Image from "next/image"
 import ShowImages from '@/app/components/userUi/imageUi/showImages'
 import { use, useEffect, useState } from 'react';
-import Blabla from '@/app/components/userUi/imageUi/homePage'
+import HomePage from '@/app/components/userUi/imageUi/homePage'
 //Use client ekki gott!
 import Link from 'next/link'
 import undraw_Upload_image_re_svxx from "@/app/public/undraw_Upload_image_re_svxx.png"

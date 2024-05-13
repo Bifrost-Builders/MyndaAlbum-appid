@@ -10,7 +10,7 @@ type ImageTransferType = {
   info: any,
 };
 
-function homePage() {
+function HomePage() {
   const [files, setFiles] = useState<ImageTransferType[]>([]);
   const ctxProviderRef = useRef(null);
 
@@ -58,4 +58,4 @@ function homePage() {
   );
 }
 
-export default homePage;
+export default HomePage;
