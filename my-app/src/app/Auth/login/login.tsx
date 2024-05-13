@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { app } from '../firebase/firebaseConfig';
+import { app } from '../../firebase/firebaseConfig';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginPage() {

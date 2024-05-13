@@ -1,8 +1,8 @@
 // Page.tsx
 "use client"
 import React, { useState } from 'react';
-import Login from './login';
-import SignUp from './signup';
+import Login from './login/login';
+import SignUp from './signup/signup';
 
 export default function Page() {
     const [isSignUp, setIsSignUp] = useState(false);
