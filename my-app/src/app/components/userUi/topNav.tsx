@@ -15,7 +15,7 @@ const topNavLinks = [
     },
     {
         imgPath: undraw_Edit_photo_re_ton4,
-        route: "/secure",
+        route: "/secure/Tree",
         label: "Tree",
     },
 ];
