@@ -4,6 +4,7 @@ import * as LR from '@uploadcare/blocks';
 import { PACKAGE_VERSION } from '@uploadcare/blocks';
 import ShowImages from './showImages';
 import NoImage from './noImage';
+import Button from '../../baseComp/button';
 
 
 LR.registerBlocks(LR);
@@ -22,7 +23,7 @@ export type ImageTransferType = {
   info: any,
 };
 
-function App() {
+function ImageHandlerMain() {
   const baseUrl = "https://ucarecdn.com/";
     const [files, setFiles] = useState([]);
     const ctxProviderRef = useRef(null);
@@ -57,10 +58,13 @@ function App() {
     };
   }, [setFiles]);
 
+  const handleSubmitAlbum = () => {
+    //Upload images to firebase
+  }
     return (
-        <section className='relative min-h-screen h-full w-full'>
-            <section className='bg-slate-100 h-32 rounded-[12px] shadow-sm p-5 border-2 border-slate-300 border-opacity-20'>
-                <h1 className="font-semibold text-lg mb-5 text-center">Click the button to add image</h1>
+        <section className='relative h-full w-full'>
+            <section className='my-8 h-32 rounded-[12px] shadow-sm p-5 border-2 border-slate-300 border-opacity-20'>
+                <h1 className="font-semibold text-lg mb-5 text-center text-white">Click the button to add image</h1>
                 <div className='flex justify-center'>
                         <lr-config
                         ctx-name="my-uploader"
@@ -79,13 +83,24 @@ function App() {
                     />
                 </div>
             </section>
-            <div className="h-full w-full my-3">
-                <h1 className="font-semibold text-lg my-1">Your selected images</h1>
-
+            <div className="min-h-full w-full mt-3 mb-12">
           {files.length === 0 ?
-              <NoImage />
+            <>
+              
+            </>
             
-            : <ShowImages files={files} />}
+            : <>
+              <h1 className="font-semibold text-lg my-1 text-white max-md:text-center">Your selected images</h1>
+              <ShowImages files={files} />
+              <div className='h-[120px] w-full flex justify-center itme-center'>
+                <Button
+                  title='Create album'
+                  variant='secondary'
+                  onClick={() => handleSubmitAlbum()}
+                ></Button>
+              </div>
+            </>
+          }
 
             </div>
 
@@ -93,4 +108,4 @@ function App() {
   );
 }
 
-export default App;
+export default ImageHandlerMain;

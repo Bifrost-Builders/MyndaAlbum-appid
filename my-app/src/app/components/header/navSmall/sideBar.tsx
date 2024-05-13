@@ -24,7 +24,7 @@ const sidebar = {
   },
 };
 
-export const MobileSideBar = () => {
+export const MobileSideBar = ({userMenu = false}) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
@@ -35,7 +35,7 @@ export const MobileSideBar = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className="absolute top-0 right-0 bottom-0 w-[300px] z-50"
+      className={`absolute top-0 right-0 bottom-0 w-[100px] z-50`}
     >
       <motion.div
         className={`absolute top-0 right-0 bottom-0 ${
@@ -43,7 +43,7 @@ export const MobileSideBar = () => {
         } bg-white`}
         variants={sidebar}
       />
-      <Navigation />
+      <Navigation userMenu={userMenu} />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );

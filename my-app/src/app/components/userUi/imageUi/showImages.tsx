@@ -9,6 +9,8 @@ const gridTemplates = {
   large: "grid-cols-4 md:grid-cols-5 lg:grid-cols-6",
 };
 
+//col-span-2
+//row-span-2
 const imageVariants = [
   "col-span-2",
   "row-span-2", 
@@ -31,7 +33,7 @@ export default function ShowImages({ files }) {
     <AnimatePresence>
       <section
         className={clsx(
-          "w-full h-auto grid gap-4 p-4",
+          "w-full h-auto grid gap-4 p-4 my-2",
           determineGridClass(),
           "transition-all duration-500 ease-in-out"
         )}

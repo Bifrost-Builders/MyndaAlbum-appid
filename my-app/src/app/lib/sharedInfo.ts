@@ -12,6 +12,21 @@ export const LinkNames = ["Home", "Demo", "QA", "About", "Find your group", "Sig
 //Items will be route (index by LinkNames) doest need / at start
 export const LinkRoutes = ["", "Demo", "Qa", "About", "findyourgroup", "Auth"]
 
+export const UserNavData = [
+    {
+        title: "Overview",
+        Url_Path: "/secure",
+    },
+    {
+        title: "Settings",
+        Url_Path: "/secure/settings",
+    },
+    {
+        title: "Log out",
+        Url_Path: "",
+    },
+];
+
 /*
     Array thats stores data that is supposed to be displayed in user left side navbar
     Dynamic
