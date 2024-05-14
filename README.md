@@ -38,6 +38,16 @@ Með þessum eiginleikum og notendasögum leggur MyndaAlbum-appið grunninn að 
 ![alt text](image.jpg)
 ![alt text](image.jpg)
 ![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
+![alt text](image.jpg)
 
 ## Stutt skjámyndsupptaka (mp4) af notendavirkni.
 [eftir að bua til og setja linkinn a upptokunni](https://mynda-album-appid.vercel.app/)
