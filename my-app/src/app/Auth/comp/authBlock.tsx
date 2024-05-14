@@ -8,7 +8,7 @@ export default function AuthBlock() {
           <div className='h-12 w-full bg-gradient-to-t from-black via-slate-950 to-transparent blur'></div>
                 <div className="text-white text-center pt-5 bg-black">
             <h3 className="text-2xl font-bold pb-2">Kolbri</h3>
-            <h1 className="text-3xl font-semibold">Let's get started</h1>
+            <h1 className="text-3xl font-semibold">Let&apos;s get started</h1>
           </div>
           <section className="flex flex-col justify-center mt-5 items-center gap-y-4 bg-black">
                   <GoogleSignInButton />
