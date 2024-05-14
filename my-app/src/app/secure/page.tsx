@@ -225,7 +225,7 @@ export default function homePage() {
                             />
                         </div>
                         {userAlbums.length != 0 ?
-                            <HandleUserView userAlbums={ userAlbums} />
+                            <HandleUserView userAlbums={ userAlbums } />
                             :
                             <Image
                                 src={undraw_Upload_image_re_svxx}

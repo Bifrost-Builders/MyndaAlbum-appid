@@ -141,7 +141,7 @@ function ImageHandlerMain({ userName, modal }) {
           <>
             <h1 className="font-semibold text-lg my-1 text-white max-md:text-center">Your selected images</h1>
             <ShowImages files={files} />
-            <section className="h-96 w-96 bg-black rounded-[12px] py-4 px-14">
+            <section className="h-96 w-96 bg-black rounded-[12px] py-4 px-14 absolute left-1/2 transform -translate-x-1/2">
 
               <div className="h-full w-full flex flex-col items-center gap-y-4">
 
@@ -169,10 +169,7 @@ function ImageHandlerMain({ userName, modal }) {
 
               </div>
 
-
-
             </section>
-
           </>
         }
       </div>
