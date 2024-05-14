@@ -35,6 +35,7 @@ import { MobileSideBar } from '../components/header/navSmall/sideBar';
 import { useCycle } from 'framer-motion';
 import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
+import HandleUserView from '../components/userUi/handleUserView';
 
 
 export default function homePage() {
@@ -224,21 +225,7 @@ export default function homePage() {
                             />
                         </div>
                         {userAlbums.length != 0 ?
-                            Object.keys(userAlbums).map((albumName) => (
-                                <div key={albumName} className="mt-4">
-                                    <h2 className="text-xl font-semibold">{albumName}</h2>
-                                    <div className="grid grid-cols-3 gap-4">
-                                        {Object.keys(userAlbums[albumName]).map((imageId) => (
-                                            <div key={imageId}>
-                                                <img src={userAlbums[albumName][imageId].imageurl} alt="Album" className="w-full h-auto rounded-md" />
-                                                <p className="text-sm">City: {userAlbums[albumName][imageId].info.city}</p>
-                                                <p className="text-sm">Country: {userAlbums[albumName][imageId].info.country}</p>
-                                                <p className="text-sm">Province: {userAlbums[albumName][imageId].info.province}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))
+                            <HandleUserView userAlbums={ userAlbums} />
                             :
                             <Image
                                 src={undraw_Upload_image_re_svxx}
