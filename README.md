@@ -46,12 +46,11 @@ MyndaAlbum-appið er hannað til að gera notendum kleift að skapa, deila og nj
 
 **Næstu skref:**
 - Notendasamskipti: Útvíkkun á samræmi og samskiptum milli notenda. Þetta gæti innifalið skilaboðakerfi milli notenda, hagræna tilboð og samstarfsmöguleika í sköpun og deilingu minninga.
-- Tækniútfærsla fyrir flóknari myndavinnslu: Aðbætur sem felast í að bjóða notendum tæknilegar möguleika til að vinna með myndir, svo sem myndavinnslu, sniðbreytingar, eða auglýsingar.
-- Viðskiptaaðgerðir: Efni sem stuðlar að viðskiptum, eins og aðgerðir til að kaupa prentaðar útgáfur af myndum eða þjónustu sem veitir sérhæfða útgáfu fyrir viðburði eða samskipti.
-- Notendavænt hönnun og notendaviðmót (UI/UX): Stöðugt vinnslu á að bæta notendavænleika og aðgengi fyrir notendur til að gera upplifun notenda sem hagstæðasta og þægilegasta.
-- Með þessum næstu skrefum ætlar MyndaAlbum-appið að ná stefnu um að bjóða notendum þægilegar og fjölbreyttar leiðir til að skapa, deila og njóta minninga með myndum og tengdum texta.
+- Tækniútfærsla fyrir flóknari myndvinnslu: Aðbætur sem felast í að bjóða notendum tæknilega möguleika til að vinna með myndir, svo sem myndvinnslu eða sniðbreytingu.
+- Notendavæn hönnun og notendaviðmót (UI/UX): Stöðugt í vinnslu á að bæta notendavænleika og aðgengi fyrir notendur til að gera upplifun notenda sem hagstæðasta og þægilegasta.
+Með þessum næstu skrefum ætlar MyndaAlbum-appið að ná stefnu um að bjóða notendum þægilegar og fjölbreyttar leiðir til að skapa, deila og njóta minninga með myndum og tengdum texta.
 
-Allur kóði, skrár og önnur gögn (gagnagrunnur, myndir, myndband).
+## Allur kóði, skrár og önnur gögn (gagnagrunnur, myndir, myndband).
 
 Ókláruð verkefni:
 
