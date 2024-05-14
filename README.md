@@ -1,7 +1,6 @@
 # *Tækniskólinn - Tölvubraut - VEFÞ3VÞ05DU*
 ---  
-**Höfundar:**  
-Gabríel Máni Sigvaldason - Valdas Kaubrys - Jökull Smári Gestsson - Ragnar Ágúst Ómarsson  
+**Höfundar:** Gabríel Máni Sigvaldason - Valdas Kaubrys - Jökull Smári Gestsson - Ragnar Ágúst Ómarsson  
 ---  
 [Tengill á Vefappið](https://vercel.com/bifroest-builders/mynda-album-appid)
 
