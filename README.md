@@ -34,10 +34,9 @@ Með þessum eiginleikum og notendasögum leggur MyndaAlbum-appið grunninn að 
 
 ## Skjámyndir af vefappi.  
 ![Landing Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/8714a49fa6cb6121a8d152877f6f22dce138c616/skjamyndir%20af%20vefappi/1.jpeg)
-![alt text](image.jpg)
-![alt text](image.jpg)
-![alt text](image.jpg)
-![alt text](image.jpg)
+![Auth Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/a6f0aa63f465f26315020cf7a61850821f722afc/skjamyndir%20af%20vefappi/1-AUTH.jpeg)
+![Signup Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/a6f0aa63f465f26315020cf7a61850821f722afc/skjamyndir%20af%20vefappi/1-AUTH-signup.jpeg)
+![Signin Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/a6f0aa63f465f26315020cf7a61850821f722afc/skjamyndir%20af%20vefappi/1-AUTH-signin.jpeg)
 ![alt text](image.jpg)
 ![alt text](image.jpg)
 ![alt text](image.jpg)
