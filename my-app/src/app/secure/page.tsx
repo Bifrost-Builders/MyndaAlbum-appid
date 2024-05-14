@@ -14,7 +14,7 @@ import Button from '../components/baseComp/button';
 
 import MobileHeader from '../components/header/navSmall/mobileHeader';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import { getUserAlbums } from '../ev1/page'
+import { getUserAlbums } from '../ev1/functions'
 
 //Remove button and replace with button comp
 //Add profile pic for smaller dev?
