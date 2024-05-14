@@ -34,7 +34,7 @@ import { readFromFirebase } from '../lib/scripts'
 import { MobileSideBar } from '../components/header/navSmall/sideBar';
 import { useCycle } from 'framer-motion';
 import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
 export default function HomePage() {
