@@ -146,7 +146,7 @@ function ImageHandlerMain({ userName, modal }) {
               <div className="h-full w-full flex flex-col items-center gap-y-4">
 
                 <div>
-                  <h1 className="text-white font-semibold text-xl">Now let's make your travel</h1>
+                  <h1 className="text-white font-semibold text-xl">Now let&apos;s make your travel</h1>
                   <p className="text-gray-100 text-center">All fields needs to be entered in</p>
                 </div>
 
