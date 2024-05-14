@@ -33,7 +33,7 @@ Texta viðbætur við myndir: Möguleiki er á að bæta við texta við hverja 
 Með þessum eiginleikum og notendasögum leggur MyndaAlbum-appið grunninn að notendavænni og fjölbreyttri reynslu í að skapa og deila minningum með myndum og tengdum texta.
 
 ## Skjámyndir af vefappi.  
-![alt text](image.jpg)
+![alt text](skjamyndir af vefappi/1.jpeg)
 ![alt text](image.jpg)
 ![alt text](image.jpg)
 ![alt text](image.jpg)
