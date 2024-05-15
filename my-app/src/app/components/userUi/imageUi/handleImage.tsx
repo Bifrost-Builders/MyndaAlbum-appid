@@ -123,7 +123,7 @@ function ImageHandlerMain({ userName, modal }) {
 
           <lr-file-uploader-regular
             ctx-name="my-uploader"
-            css-src={`https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.38.1/web/lr-file-uploader-regular.min.css`}
+            css-src={`https://cdn.jsdelivr.net/npm/@uploadcare/blocks@${PACKAGE_VERSION}/web/lr-file-uploader-regular.min.css`}
             class='my-config'
           />
 
