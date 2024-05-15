@@ -65,6 +65,7 @@ export default function HandleUserView({ userAlbums }) {
                 
                     
                     <div className="h-full w-full grid grid-cols-3 max-sm:grid-cols-1 lg:grid-cols-5 place-item-center gap-12 mt-3">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                         {Object.keys(frontImages).map((albumName) => (
                             <div key={albumName} className="w-full h-full hover:bg-slate-50 hover:bg-opacity-40">
                                 {frontImages[albumName] ? (
@@ -82,6 +83,7 @@ export default function HandleUserView({ userAlbums }) {
                                             <h1 className="text-lg font-semibold group-hover:text-slate-900 mt-5 text-center">{albumName}</h1>
                                         </a>
                                     </div>
+                                    
                                 ) : (
                                     <p>No front images available for this album</p>
                                 )}

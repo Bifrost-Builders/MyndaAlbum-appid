@@ -10,8 +10,7 @@ import NoImage from './noImage';
 import Button from '../../baseComp/button';
 import { writeNewPicture } from '@/app/lib/write_functions_rtdb';
 import Router from 'next/navigation';
-import { useRouter } from 'next/navigation';
-//T 
+import { useRouter } from 'next/navigation'; 
 import "@uploadcare/blocks/web/lr-file-uploader-regular.min.css"
 
 
@@ -116,7 +115,7 @@ function ImageHandlerMain({ userName, modal }) {
   return (
     <section className='relative h-full w-full'>
       <section className='my-8 h-32 rounded-[12px] shadow-sm p-5 border-2 border-slate-300 border-opacity-20'>
-        <h1 className="font-semibold text-lg mb-5 text-center text-white">Click the button to add image</h1>
+        <h1 className="font-semibold text-lg mb-5 text-center text-white max-sm:text-sm">Click the button to add image</h1>
         <div className='flex justify-center'>
           <lr-config
             ctx-name="my-uploader"
