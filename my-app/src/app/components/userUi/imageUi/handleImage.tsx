@@ -11,6 +11,8 @@ import Button from '../../baseComp/button';
 import { writeNewPicture } from '@/app/lib/write_functions_rtdb';
 import Router from 'next/navigation';
 import { useRouter } from 'next/navigation';
+//T 
+import "@uploadcare/blocks/web/lr-file-uploader-regular.min.css"
 
 
 LR.registerBlocks(LR);
