@@ -25,7 +25,7 @@ const GoogleSignInButton = () => {
   return (
     <button
       onClick={handleSignInWithGoogle}
-      className="bg-slate-100 text-black hover:bg-slate-100 h-12 w-60 rounded-[5px] font-semibold text-lg flex justify-center items-center gap-x-3"
+      className="bg-slate-100 text-black hover:bg-slate-200 w-64 h-14 rounded-[5px] font-semibold text-lg flex justify-center items-center gap-x-3"
     >
       <Image
         className="size-7"

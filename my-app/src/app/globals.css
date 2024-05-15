@@ -8,3 +8,18 @@
   --s-accent: 100%;
   --l-accent: 61%;
 }
+
+
+.berkshire-swash-regular {
+  font-family: "Berkshire Swash", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Berkshire Swash", serif;
+    font-weight: 400;
+    src: url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+  }
+}

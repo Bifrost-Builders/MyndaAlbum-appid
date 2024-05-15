@@ -22,6 +22,9 @@ const config: Config = {
         float: 'float 3s ease-in-out infinite',
         rotate: 'rotate 10s linear infinite',
       },
+      fontFamily: {
+        berkshire: ['Berkshire Swash', 'serif'],
+      },
     },
   },
   plugins: [],
