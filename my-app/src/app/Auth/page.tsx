@@ -1,11 +1,12 @@
 import ImageGrid from './comp/imagesGrid';
 import AuthBlock from './comp/authBlock';
+import { appName } from "@/app/lib/sharedInfo";
 export default function LoginPage() {
     return (
       <section className="bg-black w-full h-screen grid grid-cols-3 place-items-end max-md:flex max-md:justify-center max-md:items-center">  
   <section className="h-screen w-full bg-black relative col-span-2 flex justify-center items-center max-md:hidden">
     <div className="bg-gradient-to-br from-pink-400 via-blue-400 to-green-400 h-32 w-full blur-3xl absolute top-2"></div>
-    <h1 className="text-white text-8xl font-extrabold">TimelineX</h1>
+    <h1 className="text-white text-8xl font-extrabold">{appName}</h1>
   </section>
 
  <div className="w-[366px] h-screen relative overflow-hidden bg-black">

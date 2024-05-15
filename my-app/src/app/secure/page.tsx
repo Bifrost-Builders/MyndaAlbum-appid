@@ -36,6 +36,7 @@ import { useCycle } from 'framer-motion';
 import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import HandleUserView from '../components/userUi/handleUserView';
+import { appName } from "@/app/lib/sharedInfo";
 
 
 export default function HomePage() {
@@ -137,7 +138,7 @@ export default function HomePage() {
 
                 <div className="flex justify-between items-center w-full md:hidden z-50">
 
-                    <h1 className="text-3xl font-semibold">TimelineX</h1>
+                    <h1 className="text-3xl font-semibold">{appName}</h1>
 
                     <div className='text-black'>
                         <MobileSideBar userMenu={true} />
@@ -146,7 +147,7 @@ export default function HomePage() {
                 </div>
 
                     <div className={`bg-${bgCard} flex items-center justify-between w-full max-md:hidden`}>
-                    <h1 className="text-4xl font-semibold">TimelineX</h1>
+                    <h1 className="text-4xl font-semibold">{appName}</h1>
 
                 <ul className="text-[19px] flex gap-x-11 pt-2">
                     {
