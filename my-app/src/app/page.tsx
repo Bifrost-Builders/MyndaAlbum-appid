@@ -59,7 +59,7 @@ export default function Home() {
           </ul>
 
           {/* Call to action button */}
-          <RoutingButton route='/secure'/>
+          <RoutingButton route='/Auth'/>
 
         </section>
 
