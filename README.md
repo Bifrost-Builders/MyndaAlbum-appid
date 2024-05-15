@@ -54,7 +54,7 @@ Með þessum eiginleikum og notendasögum leggur MyndaAlbum-appið grunninn að 
 
 
 ## Stutt skjámyndsupptaka (mp4) af notendavirkni.
-[eftir að bua til og setja linkinn a upptokunni](https://mynda-album-appid.vercel.app/)
+[Myndband af virkni]()
 ## Samantekt. Hver væru næstu skref, ókláruð virkni.
 MyndaAlbum-appið er hannað til að gera notendum kleift að skapa, deila og njóta minninga með myndum og texta í formi tímalínunnar. Notendur geta búið til eigin myndatímalínur, bætt við myndum og texta, deilt tímalínunum sínum með öðrum notendum og tengst vinum og fjölskyldu í appinu. Næstu skref fyrir appið innifela að bæta við notendasamskiptum, tækniútfærslu fyrir flóknari myndavinnslu, viðskiptaaðgerðir og stöðugt að bæta notendavæna hönnun og viðmót. Með þessum aðgerðum ætlar MyndaAlbum-appið að tryggja þægilegar og fjölbreyttar leiðir til að skapa, eiga og deila minningum með myndum.
 
