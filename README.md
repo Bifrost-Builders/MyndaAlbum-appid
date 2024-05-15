@@ -32,6 +32,14 @@ Tengingar við aðra: Notendur geta tengst öðrum notendum til að skoða og de
 Texta viðbætur við myndir: Möguleiki er á að bæta við texta við hverja mynd til að útskýra eða bæta við frásögnum um þær.
 Með þessum eiginleikum og notendasögum leggur MyndaAlbum-appið grunninn að notendavænni og fjölbreyttri reynslu í að skapa og deila minningum með myndum og tengdum texta.
 
+**Staflar og söfn:**  
+- Framework: [NextJS](https://nextjs.org/)
+- Front-end library: [React](https://react.dev/)
+- CSS og Styling: [TailwindCSS](https://tailwindcss.com/)
+- Gagnagrunnur: [Firebase: Realtime Database](https://firebase.google.com/products/realtime-database)
+- Authentication: [Firebase: Authentication](https://firebase.google.com/products/auth)
+- Fyrir Hosting/Hýsingu: [Vercel](https://vercel.com/)
+
 ## Skjámyndir af vefappi.  
 ![Landing Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/8714a49fa6cb6121a8d152877f6f22dce138c616/skjamyndir%20af%20vefappi/1.jpeg)
 ![Auth Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/a6f0aa63f465f26315020cf7a61850821f722afc/skjamyndir%20af%20vefappi/1-AUTH.jpeg)
