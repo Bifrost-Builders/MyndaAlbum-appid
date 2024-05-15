@@ -4,6 +4,7 @@ import { app } from '../../../firebase/firebaseConfig';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
+import { appName } from "@/app/lib/sharedInfo";
 
 export default function EmailPage() {
     const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ export default function EmailPage() {
             <div className="bg-gradient-to-br from-blue-600 via-green-600 to-purple-400 h-32 w-36 absolute right-24 bottom-8 blur-2xl motion-safe:animate-pulse"></div>
             <div className="bg-gradient-to-br from-blue-600 via-green-600 to-purple-400 h-32 w-36 absolute right-0 top-8 blur-2xl motion-safe:animate-pulse"></div>
             <section className="h-full w-96 bg-slate-50 bg-opacity-5 px-10 pt-20">
-                <h1 className="text-center text-5xl font-semibold text-white">TimelineX</h1>
+                <h1 className="text-center text-5xl font-semibold text-white">{appName}</h1>
                 <form onSubmit={handleSignUp} className="flex flex-col gap-y-4 my-24 gap-y-10">
                     <div className="flex flex-col">
                         <label htmlFor="Email" className="text-xl text-white font-semibold">Email</label>

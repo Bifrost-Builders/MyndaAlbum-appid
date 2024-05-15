@@ -1,5 +1,6 @@
 import { MobileSideBar } from './sideBar';
 import clsx from 'clsx';
+import { appName } from "@/app/lib/sharedInfo";
 
 export default function MobileHeader({ isSticky }) {
   return (
@@ -11,7 +12,7 @@ export default function MobileHeader({ isSticky }) {
         }
       )}
     >
-      <h1 className="text-3xl font-bold text-white">Kolbri</h1>
+      <h1 className="text-3xl font-bold text-white">{appName}</h1>
       <MobileSideBar userMenu={false}/>
     </header>
   );
