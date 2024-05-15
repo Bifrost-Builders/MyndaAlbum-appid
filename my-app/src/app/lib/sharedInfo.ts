@@ -27,7 +27,12 @@
 
 */
 
+<<<<<<< HEAD
 export const appName = "TimelineX";
+=======
+export const appName = "TimelineX"; // Breyta fyrir vefapps nafnið
+// import { appName } from "@/app/lib/sharedInfo"; til að importa þar sem þarf
+>>>>>>> d8f6879e458e2b15829737635193a37bace59cbd
 
 //Items will be displayed in navbar
 export const LinkNames = ["Home", "Demo", "QA", "About", "Find your group", "Sign in"];

@@ -1,6 +1,7 @@
 import React from 'react';
 import RoutingButton from './components/routingButton';
 import Header from './components/header/header';
+import { appName } from "@/app/lib/sharedInfo";
 
 export default function Home() {  
   return (
@@ -46,7 +47,7 @@ export default function Home() {
         </div>
 
           <h1 className="text-4xl text-center font-bold z-40">
-            TimelineX allows users to connect
+            {appName} allows users to connect
             <br />
             Make your photo timeline today
           </h1>

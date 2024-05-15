@@ -42,11 +42,11 @@ Með þessum eiginleikum og notendasögum leggur MyndaAlbum-appið grunninn að 
 
 ## Skjámyndir af vefappi.  
 ![Landing Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/8714a49fa6cb6121a8d152877f6f22dce138c616/skjamyndir%20af%20vefappi/1.jpeg)
-![Auth Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/a6f0aa63f465f26315020cf7a61850821f722afc/skjamyndir%20af%20vefappi/1-AUTH.jpeg)
+![Auth Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/main/skjamyndir%20af%20vefappi/authScreen.png)
 ![Signup Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/a6f0aa63f465f26315020cf7a61850821f722afc/skjamyndir%20af%20vefappi/1-AUTH-signup.jpeg)
 ![Signin Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/a6f0aa63f465f26315020cf7a61850821f722afc/skjamyndir%20af%20vefappi/1-AUTH-signin.jpeg)
 ![Overview Page](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/99f45e82297f2b3a4548fdbf04e5f8d6cc04906a/skjamyndir%20af%20vefappi/2.jpeg)
-![After pressing add travel button](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/99f45e82297f2b3a4548fdbf04e5f8d6cc04906a/skjamyndir%20af%20vefappi/2-addtravelbutton.jpeg)
+![After pressing add travel button](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/main/skjamyndir%20af%20vefappi/myPageScreen.png)
 ![After importing image](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/99f45e82297f2b3a4548fdbf04e5f8d6cc04906a/skjamyndir%20af%20vefappi/2-addtravelbutton-afterimportimage.jpeg)
 ![After importing image 2](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/99f45e82297f2b3a4548fdbf04e5f8d6cc04906a/skjamyndir%20af%20vefappi/2-addtravelbutton-afterimportimage%202.jpeg)
 ![After pressing on image](https://github.com/Bifrost-Builders/MyndaAlbum-appid/blob/99f45e82297f2b3a4548fdbf04e5f8d6cc04906a/skjamyndir%20af%20vefappi/2-addtravelbutton-afterimportimage-aftertappingonimage.jpeg)
