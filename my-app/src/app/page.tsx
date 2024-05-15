@@ -8,7 +8,7 @@ import Footer from './components/footer';
 
 export default function Home() {  
   return (
-    <>
+    <section className='min-h-screen h-full bg-black'>
       <Header />
       <main className="min-h-screen h-full w-full bg-black relative">
         {/* Gradient backgrounds with animations */}
@@ -83,6 +83,6 @@ export default function Home() {
       
 
 
-    </>
+    </section>
   );
 }
