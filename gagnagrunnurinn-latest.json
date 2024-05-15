@@ -1,0 +1,181 @@
+{
+  "album": {
+    "Gabriel Sigvaldson": {
+      "123": {
+        "2ef47221-6521-45b2-83b0-6069b872d9cc": {
+          "imageurl": "https://ucarecdn.com/2ef47221-6521-45b2-83b0-6069b872d9cc/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        },
+        "49dd7f9e-8c9c-487c-9dab-810084f15fb3": {
+          "imageurl": "https://ucarecdn.com/49dd7f9e-8c9c-487c-9dab-810084f15fb3/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        },
+        "526cacd9-e024-4842-b9f2-876713bbd658": {
+          "imageurl": "https://ucarecdn.com/526cacd9-e024-4842-b9f2-876713bbd658/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        },
+        "d8838c89-156b-4b15-83c3-c2ae97182d08": {
+          "imageurl": "https://ucarecdn.com/d8838c89-156b-4b15-83c3-c2ae97182d08/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        },
+        "f1b185ae-71ff-43fe-a23e-b8f26dd044fc": {
+          "imageurl": "https://ucarecdn.com/f1b185ae-71ff-43fe-a23e-b8f26dd044fc/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        }
+      },
+      "Canada": {
+        "af55eef0-38fa-423d-9162-cfe5bb7b6db3": {
+          "imageurl": "https://ucarecdn.com/af55eef0-38fa-423d-9162-cfe5bb7b6db3/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        }
+      },
+      "Espania": {
+        "a15a3ae5-3eb7-40d7-aa9f-1d29287cb9f3": {
+          "imageurl": "https://ucarecdn.com/a15a3ae5-3eb7-40d7-aa9f-1d29287cb9f3/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        }
+      }
+    },
+    "gm": {
+      "123": {
+        "9939": {
+          "imageurl": "www",
+          "info": {
+            "city": "llll",
+            "country": "224fr",
+            "province": "asjcij"
+          }
+        }
+      }
+    },
+    "jonjonsson123": {
+      "123": {
+        "113": {
+          "imageurl": "www",
+          "info": {
+            "city": "llll",
+            "country": "224fr",
+            "province": "asjcij"
+          }
+        },
+        "9939": {
+          "imageurl": "www",
+          "info": {
+            "city": "llll",
+            "country": "224fr",
+            "province": "asjcij"
+          }
+        }
+      },
+      "album_name": {
+        "123": {
+          "imageurl": "456",
+          "info": {
+            "city": "kef",
+            "country": "ice",
+            "province": "idk"
+          }
+        },
+        "044": {
+          "imageurl": "www",
+          "info": {
+            "city": "kop",
+            "country": "island",
+            "province": "lalalal"
+          }
+        },
+        "image_uuid": {
+          "imageurl": "url to image",
+          "info": {
+            "city": "city name",
+            "country": "country name ",
+            "province": "province name"
+          }
+        }
+      }
+    },
+    "jonjonsson123gmailcom": {
+      "Japan": {
+        "650901ef-ec84-4d54-8b68-62df7df5192a": {
+          "imageurl": "https://ucarecdn.com/650901ef-ec84-4d54-8b68-62df7df5192a/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        }
+      }
+    },
+    "jonjonsson456gmailcom": {
+      "kaaf": {
+        "36cd79c3-eb49-42c2-bc02-f8298225e55f": {
+          "imageurl": "https://ucarecdn.com/36cd79c3-eb49-42c2-bc02-f8298225e55f/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        }
+      }
+    },
+    "peturgmailcom": {
+      "MyFirstFolder": {
+        "26f9858b-2f13-46a4-8ffb-6292541f91ce": {
+          "imageurl": "https://ucarecdn.com/26f9858b-2f13-46a4-8ffb-6292541f91ce/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        }
+      }
+    },
+    "risaeðlagmail8": {
+      "Veislan": {
+        "b4ebfc74-fe0a-4f07-aaf8-63d0e80b28dc": {
+          "imageurl": "https://ucarecdn.com/b4ebfc74-fe0a-4f07-aaf8-63d0e80b28dc/",
+          "info": {
+            "city": "unknown",
+            "country": "unknown",
+            "province": "unknown"
+          }
+        }
+      }
+    }
+  },
+  "user": {
+    "jonjonsson123": {
+      "age": 30,
+      "displayname": "Jón Jónsson",
+      "email": "jonjonsson123@gmail.com"
+    }
+  }
+}
