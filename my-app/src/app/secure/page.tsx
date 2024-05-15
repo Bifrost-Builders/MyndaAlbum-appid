@@ -1,36 +1,11 @@
 "use client";
-import LeftSideNav from '@/app/components/userUi/leftSideNav'
 import HandleImage from "@/app/components/userUi/imageUi/handleImage"
-//import blabla from "@/app/components/userUi/imageUi/showImages" commenta ut þvi að gaf villur þegar reyndi að builda þetta á hýsingunni
 import Image from "next/image"
-import ShowImages from '@/app/components/userUi/imageUi/showImages'
 import { useEffect, useState } from 'react';
-//import BlaBla from '@/app/components/userUi/imageUi/homePage' commenta ut þvi að gaf villur þegar reyndi að builda þetta á hýsingunni
-//Use client ekki gott!
 import Link from 'next/link'
 import undraw_Upload_image_re_svxx from "@/app/public/undraw_Upload_image_re_svxx.png"
-import clsx from 'clsx';
 import Button from '../components/baseComp/button';
-
-import MobileHeader from '../components/header/navSmall/mobileHeader';
-import { getDatabase, ref, onValue } from 'firebase/database';
 import { getUserAlbums } from '../ev1/functions'
-
-//Remove button and replace with button comp
-//Add profile pic for smaller dev?
-//New link? add here
-
-//Data static needs change
-//Logic for next and preview
-//When log in is comp then update User into dync
-//Add travel should be modal
-//Black bg should be good icon or photo
-//Search logic
-
-//Linkar i mobile nav sleppa localhost!
-
-
-import { readFromFirebase } from '../lib/scripts'
 import { MobileSideBar } from '../components/header/navSmall/sideBar';
 import { useCycle } from 'framer-motion';
 import { getAuth, onAuthStateChanged,signOut } from 'firebase/auth';
