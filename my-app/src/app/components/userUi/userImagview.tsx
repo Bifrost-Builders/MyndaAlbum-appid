@@ -52,13 +52,13 @@ const UserImageView = ({ images,controllOpen }) => {
 
       {fullscreenImage && (
         <motion.div
-          className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-80"
+          className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-85"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <div className="relative">
             <button
-              className="absolute top-2 right-2 text-white text-lg bg-gray-800 rounded-full w-8 h-8 flex justify-center items-center"
+              className="absolute top-2 left-2 text-white text-lg bg-black rounded-[5px] w-8 h-8 flex justify-center items-center"
               onClick={closeFullscreen}
             >
               X
