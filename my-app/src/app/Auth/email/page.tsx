@@ -52,7 +52,7 @@ export default function EmailPage() {
             <div className="bg-gradient-to-br z-30 from-blue-600 via-green-600 to-purple-400 h-32 w-36 absolute right-0 top-8 blur-2xl motion-safe:animate-pulse"></div>
             <section className="h-full w-96 bg-slate-50 bg-opacity-5 px-10 pt-20">
 
-                <h1 className="text-center text-5xl font-semibold text-white">Kolbir</h1>
+                <h1 className="text-center text-5xl font-semibold text-white">TimelineX</h1>
             
                 <form onSubmit={(e) => { e.preventDefault(); handleLogin(e); }} className="flex flex-col gap-y-4 my-24 gap-y-10 z-50">
                 

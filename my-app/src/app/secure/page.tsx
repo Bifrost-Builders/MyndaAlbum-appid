@@ -137,7 +137,7 @@ export default function HomePage() {
 
                 <div className="flex justify-between items-center w-full md:hidden z-50">
 
-                    <h1 className="text-3xl font-semibold">Kolbri</h1>
+                    <h1 className="text-3xl font-semibold">TimelineX</h1>
 
                     <div className='text-black'>
                         <MobileSideBar userMenu={true} />
@@ -146,7 +146,7 @@ export default function HomePage() {
                 </div>
 
                     <div className={`bg-${bgCard} flex items-center justify-between w-full max-md:hidden`}>
-                    <h1 className="text-4xl font-semibold">Kolbri</h1>
+                    <h1 className="text-4xl font-semibold">TimelineX</h1>
 
                 <ul className="text-[19px] flex gap-x-11 pt-2">
                     {
@@ -175,7 +175,7 @@ export default function HomePage() {
                 
                 <section className="absolute top-36 md:top-40">
 
-                        <h1 className="text-3xl font-semibold">Welcome { userName}</h1>
+                        <h1 className="text-3xl font-semibold">Welcome { userName }</h1>
                 <p>Today is { today }</p>
 
                 </section>
