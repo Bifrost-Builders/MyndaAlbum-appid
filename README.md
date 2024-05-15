@@ -58,7 +58,12 @@ Með þessum næstu skrefum ætlar MyndaAlbum-appið að ná stefnu um að bjó�
 
 ## Allur kóði, skrár og önnur gögn (gagnagrunnur, myndir, myndband).
 
-Ókláruð verkefni:
+[Allan kóða hægt að finna hér]()
 
-- 
+**Ókláruð verkefni:**  
+- Tímalína
+- Friends
+- Settings
+- About Síðan
+- Nefna appið
 
