@@ -58,7 +58,8 @@ Með þessum næstu skrefum ætlar MyndaAlbum-appið að ná stefnu um að bjó�
 
 ## Allur kóði, skrár og önnur gögn (gagnagrunnur, myndir, myndband).
 
-[Allan kóða hægt að finna hér]()
+[Allan helsta kóða hægt að finna hér](https://github.com/Bifrost-Builders/MyndaAlbum-appid/tree/main/my-app/src/app)
+Gagnagrunnur
 
 **Ókláruð verkefni:**  
 - Tímalína
@@ -66,4 +67,5 @@ Með þessum næstu skrefum ætlar MyndaAlbum-appið að ná stefnu um að bjó�
 - Settings
 - About Síðan
 - Nefna appið
+- og fleira.
 
