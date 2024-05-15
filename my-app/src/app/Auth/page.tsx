@@ -8,7 +8,7 @@ export default function LoginPage() {
     <h1 className="text-white text-8xl font-extrabold">Kolbri</h1>
   </section>
 
- <div className="w-[400px] h-screen relative overflow-hidden bg-black">
+ <div className="w-[366px] h-screen relative overflow-hidden bg-black">
       <img
         src="https://ucarecdn.com/ac619333-2351-48eb-85b2-5aa5c582720a/"
         className="w-[136px] h-[163px] absolute left-[-20px] top-1.5 rounded-xl object-cover"
