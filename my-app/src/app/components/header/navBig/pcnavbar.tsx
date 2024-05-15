@@ -3,6 +3,7 @@ import Link from "next/link"
 import { LinkNames } from "@/app/lib/sharedInfo"
 import { LinkRoutes } from "@/app/lib/sharedInfo"
 import { useRouter } from "next/navigation";
+import { appName } from "@/app/lib/sharedInfo";
 export default function PcHeader() {
     const Router = useRouter();
     const excludedLinks = ['Home', 'Find your group'];
@@ -12,7 +13,7 @@ export default function PcHeader() {
 
     return (
         <header className="relative flex h-20 w-full items-center justify-between bg-black px-20 text-xl text-white max-md:hidden">
-            <h1 className="text-3xl font-bold">Kolbri</h1>
+            <h1 className="text-3xl font-bold">{appName}</h1>
 
             <div className="flex items-center gap-14">
                 <ul className="flex gap-x-10 font-semibold text-slate-200">
