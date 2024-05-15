@@ -46,9 +46,9 @@ export default function Home() {
         </div>
 
           <h1 className="text-4xl text-center font-bold z-40">
-            Kolibri allows groups to connect
+            TimelineX allows users to connect
             <br />
-            Connect your group today
+            Make your photo timeline today
           </h1>
 
           {/* List of features with hover effects */}
