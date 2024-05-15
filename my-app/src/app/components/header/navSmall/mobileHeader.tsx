@@ -6,7 +6,7 @@ export default function MobileHeader({ isSticky }) {
   return (
     <header
       className={clsx(
-        'h-20 w-full px-20 bg-black flex items-center justify-between',
+        'h-20 w-full px-5 bg-black flex items-center justify-between',
         {
           'sticky top-0 left-0 z-50 shadow-lg': isSticky, 
         }
