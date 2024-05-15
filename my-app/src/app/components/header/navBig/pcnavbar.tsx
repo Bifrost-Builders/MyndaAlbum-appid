@@ -4,7 +4,9 @@ import { LinkNames } from "@/app/lib/sharedInfo"
 import { LinkRoutes } from "@/app/lib/sharedInfo"
 import { useRouter } from "next/navigation";
 import { appName } from "@/app/lib/sharedInfo";
-export default function PcHeader() {
+import clsx from "clsx";
+
+export default function PcHeader({isSticky}) {
     const Router = useRouter();
     const excludedLinks = ['Home', 'Find your group'];
 
@@ -12,7 +14,13 @@ export default function PcHeader() {
     .filter(link => !excludedLinks.includes(link.title)); //Filter
 
     return (
-        <header className="relative flex h-20 w-full items-center justify-between bg-black px-20 text-xl text-white max-md:hidden">
+        <header
+        className={clsx(
+            'relative flex h-20 w-full items-center justify-between bg-black px-20 text-xl text-white max-md:hidden',
+            {
+              'sticky top-0 left-0 z-50 shadow-lg transition-all duration-300': isSticky, 
+            }
+          )}>
             <h1 className="text-3xl font-bold">{appName}</h1>
 
             <div className="flex items-center gap-14">

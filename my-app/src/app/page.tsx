@@ -2,6 +2,9 @@ import React from 'react';
 import RoutingButton from './components/routingButton';
 import Header from './components/header/header';
 import { appName } from "@/app/lib/sharedInfo";
+import HomeSection from '@/app/components/HomeSection'
+import FAQ from './components/q&aDropDown';
+import Footer from './components/footer';
 
 export default function Home() {  
   return (
@@ -65,14 +68,21 @@ export default function Home() {
         </section>
 
         {/* Bouncing animation at the bottom */}
-        <div className="z-50 h-10 w-full absolute bottom-14 flex justify-center flex-col">
+        <div className="z-40 h-10 w-full absolute bottom-14 flex justify-center flex-col">
           <div className="h-1 w-28 bg-slate-200 m-auto animate-bounce"></div>
           <div className="h-1 w-20 bg-slate-100 m-auto animate-bounce"></div>
         </div>
 
       </main>
       
-      <section className='h-screen w-full'></section>
+      <HomeSection />
+      
+      <FAQ />
+
+      <Footer />
+      
+
+
     </>
   );
 }
