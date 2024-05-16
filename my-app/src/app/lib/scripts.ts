@@ -142,4 +142,3 @@ export const useDimensions = ref => {
 
   return dimensions.current;
 };
-  

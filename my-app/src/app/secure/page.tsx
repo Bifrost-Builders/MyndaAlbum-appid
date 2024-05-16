@@ -13,7 +13,6 @@ import { useRouter } from 'next/navigation';
 import HandleUserView from '../components/userUi/handleUserView';
 import { appName } from "@/app/lib/sharedInfo";
 
-
 export default function HomePage() {
     const router = useRouter();
     const [bgMode, cycleBgMode] = useCycle("white", "black");
@@ -100,12 +99,12 @@ export default function HomePage() {
         };
     
         fetchUserAlbums();
-    }, [userName, ]);
+    }, [userName, handleAdd]);
 
     console.log("User album",userAlbums)
 
     return (
-        <section className="min-h-screen w-full overflow-hidden ">
+        <section className="min-h-screen w-full mb-2 bg-white">
 
             <div className="h-screen w-full">
 
@@ -185,7 +184,7 @@ export default function HomePage() {
                     
                     :
 
-                    <div className="min-h-full w-full px-5 py-5 mb-12">
+                    <div className="min-h-full w-full px-5 py-5 mb-12 bg-white rounded-[12px]">
 
                         <div className="flex justify-between items-center max-md:flex-col max-md:text-center max-md:gap-y-3">
                             <div className="">
@@ -213,9 +212,8 @@ export default function HomePage() {
                         }
                     </div>
                 }
-
+            
             </section>
         </section>
-
     );
 }
