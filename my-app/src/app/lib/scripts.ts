@@ -3,7 +3,6 @@ import { info } from '@uploadcare/upload-client'
 import { getDatabase,ref, child, get } from "firebase/database";
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from "@/app/firebase/firebaseConfig"
-
 const firebaseApp = initializeApp(firebaseConfig);
 
 export function readFromFirebase() {
