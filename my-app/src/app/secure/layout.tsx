@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import Loading from '../loading';
 import { app } from '@/app/firebase/firebaseConfig'
@@ -26,10 +26,8 @@ const DashboardLayout = ({ children }) => {
         return <Loading />;
     }
 
-    const isHome = usePathname();
-
     return (
-        <div className={isHome ? 'bg-black' : ''}>        
+        <div>        
             {children}
         </div>
     );
